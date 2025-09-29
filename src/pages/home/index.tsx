@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 import SEO from '../../components/SEO';
 
-interface SitemapSection {
+interface HomeSection {
   title: string;
   icon: React.ReactNode;
   links: {
@@ -13,18 +13,14 @@ interface SitemapSection {
   }[];
 }
 
-const SitemapPage: React.FC = () => {
-  const sitemapSections: SitemapSection[] = [
+const HomePage: React.FC = () => {
+  const homeSections: HomeSection[] = [
     {
       title: 'Main Pages',
       icon: <Home className='h-5 w-5' />,
       links: [
-        { title: 'Home', url: '/', description: 'Design Guidelines' },
-        {
-          title: 'Accessibility',
-          url: '/accessibility',
-          description: 'Accessibility statement and features',
-        },
+        { title: 'Components', url: '/components', description: 'Components' },
+        { title: 'Tokens', url: '/tokens', description: 'Tokens' },
       ],
     },
   ];
@@ -32,25 +28,24 @@ const SitemapPage: React.FC = () => {
   return (
     <div className='min-h-screen bg-gray-50 py-12'>
       <SEO
-        title='Sitemap | kapwa.bettergov.ph'
+        title='Home | kapwa.bettergov.ph'
         description=''
-        keywords={['sitemap', 'website map']}
+        keywords={['website map']}
       />
 
       <div className='container mx-auto px-4'>
         <div className='max-w-5xl mx-auto'>
           <div className='bg-white rounded-xl shadow-xs overflow-hidden'>
             <div className='p-6 md:p-8 border-b border-gray-200'>
-              <h1 className='text-3xl font-bold text-gray-900'>Sitemap</h1>
+              <h1 className='text-3xl font-bold text-gray-900'>Home</h1>
               <p className='mt-2 text-gray-800'>
-                A complete guide to all pages and services available on
-                kapwa.bettergov.ph
+                Welcome to Kapwa: Design System for BetterGov.ph
               </p>
             </div>
 
             <div className='p-6 md:p-8'>
               <div className='space-y-12'>
-                {sitemapSections.map((section, index) => (
+                {homeSections.map((section, index) => (
                   <div key={index}>
                     <div className='flex items-center mb-4'>
                       <div className='p-2 rounded-md bg-primary-50 text-primary-600 mr-3'>
@@ -93,4 +88,4 @@ const SitemapPage: React.FC = () => {
   );
 };
 
-export default SitemapPage;
+export default HomePage;
