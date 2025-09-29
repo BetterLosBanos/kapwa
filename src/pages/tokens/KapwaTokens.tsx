@@ -25,13 +25,16 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                   <div key={shade} className='flex items-center gap-3'>
                     <div
                       className={`w-8 h-8 rounded border kapwa-border-gray-200 kapwa-bg-brand-${shade}`}
+                      style={{
+                        backgroundColor: `var(--color-kapwa-brand-${shade})`,
+                      }}
                     ></div>
                     <div>
                       <p className='text-sm font-medium kapwa-text-gray-800'>
                         Brand {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-brand-{shade}
+                        kapwa-bg-brand-{shade}
                       </p>
                     </div>
                   </div>
@@ -56,7 +59,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Red {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-red-{shade}
+                        kapwa-bg-red-{shade}
                       </p>
                     </div>
                   </div>
@@ -81,7 +84,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Green {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-green-{shade}
+                        kapwa-bg-green-{shade}
                       </p>
                     </div>
                   </div>
@@ -106,7 +109,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Yellow {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-yellow-{shade}
+                        kapwa-bg-yellow-{shade}
                       </p>
                     </div>
                   </div>
@@ -131,7 +134,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Orange {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-orange-{shade}
+                        kapwa-bg-orange-{shade}
                       </p>
                     </div>
                   </div>
@@ -156,7 +159,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Purple {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-purple-{shade}
+                        kapwa-bg-purple-{shade}
                       </p>
                     </div>
                   </div>
@@ -181,7 +184,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Blue {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-blue-{shade}
+                        kapwa-bg-blue-{shade}
                       </p>
                     </div>
                   </div>
@@ -206,7 +209,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                         Gray {shade}
                       </p>
                       <p className='text-xs kapwa-text-gray-600'>
-                        kapwa-gray-{shade}
+                        kapwa-bg-gray-{shade}
                       </p>
                     </div>
                   </div>
@@ -230,7 +233,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                       Neutral {shade}
                     </p>
                     <p className='text-xs kapwa-text-gray-600'>
-                      kapwa-neutral-{shade}
+                      kapwa-bg-neutral-{shade}
                     </p>
                   </div>
                 </div>
@@ -404,12 +407,6 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                   maps: 'Neutral/100',
                 },
                 {
-                  name: 'Surface Brand Active',
-                  var: '--color-kapwa-bg-surface-brand-active',
-                  class: 'kapwa-bg-surface-brand-active',
-                  maps: 'Brand/50',
-                },
-                {
                   name: 'Hover',
                   var: '--color-kapwa-bg-hover',
                   class: 'kapwa-bg-hover',
@@ -432,6 +429,12 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                   var: '--color-kapwa-bg-focus',
                   class: 'kapwa-bg-focus',
                   maps: 'Yellow/500',
+                },
+                {
+                  name: 'Brand Active',
+                  var: '--color-kapwa-bg-brand-active',
+                  class: 'kapwa-bg-brand-active',
+                  maps: 'Brand/50',
                 },
                 {
                   name: 'Overlay',
@@ -492,35 +495,6 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                   class: 'kapwa-bg-brand-weak',
                   maps: 'Brand/50',
                 },
-              ].map(color => (
-                <div key={color.name} className='flex items-center gap-3'>
-                  <div
-                    className='w-8 h-8 rounded border kapwa-border-gray-200'
-                    style={{ backgroundColor: `var(${color.var})` }}
-                  ></div>
-                  <div className='flex-1 min-w-0'>
-                    <p className='text-sm font-medium kapwa-text-gray-800 truncate'>
-                      {color.name}
-                    </p>
-                    <p className='text-xs kapwa-text-gray-600 truncate'>
-                      {color.class}
-                    </p>
-                    <p className='text-xs kapwa-text-gray-500 truncate'>
-                      {color.maps}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Status Background Colors */}
-          <div>
-            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
-              Status Backgrounds
-            </h3>
-            <div className='space-y-2'>
-              {[
                 {
                   name: 'Info Default',
                   var: '--color-kapwa-bg-info-default',
@@ -569,6 +543,35 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
                   class: 'kapwa-bg-danger-weak',
                   maps: 'Red/50',
                 },
+              ].map(color => (
+                <div key={color.name} className='flex items-center gap-3'>
+                  <div
+                    className='w-8 h-8 rounded border kapwa-border-gray-200'
+                    style={{ backgroundColor: `var(${color.var})` }}
+                  ></div>
+                  <div className='flex-1 min-w-0'>
+                    <p className='text-sm font-medium kapwa-text-gray-800 truncate'>
+                      {color.name}
+                    </p>
+                    <p className='text-xs kapwa-text-gray-600 truncate'>
+                      {color.class}
+                    </p>
+                    <p className='text-xs kapwa-text-gray-500 truncate'>
+                      {color.maps}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Status Background Colors */}
+          <div>
+            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
+              Status Backgrounds
+            </h3>
+            <div className='space-y-2'>
+              {[
                 {
                   name: 'Warning Default',
                   var: '--color-kapwa-bg-warning-default',
@@ -763,134 +766,23 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
           Kapwa Design System - Spacing & Layout
         </h2>
 
-        <div className='space-y-8'>
-          {/* Spacing Tokens */}
+        <div className='space-y-6'>
           <div>
             <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
-              Spacing Tokens
+              Spacing Scale
             </h3>
-            <div className='space-y-3'>
-              {[
-                {
-                  name: '3xs',
-                  value: '0.125rem',
-                  pixelValue: '2px',
-                  var: '--spacing-kapwa-3xs',
-                  class: 'kapwa-w-3xs',
-                },
-                {
-                  name: '2xs',
-                  value: '0.25rem',
-                  pixelValue: '4px',
-                  var: '--spacing-kapwa-2xs',
-                  class: 'kapwa-w-2xs',
-                },
-                {
-                  name: 'xs',
-                  value: '0.5rem',
-                  pixelValue: '8px',
-                  var: '--spacing-kapwa-xs',
-                  class: 'kapwa-w-xs',
-                },
-                {
-                  name: 'sm',
-                  value: '0.75rem',
-                  pixelValue: '12px',
-                  var: '--spacing-kapwa-sm',
-                  class: 'kapwa-w-sm',
-                },
-                {
-                  name: 'md',
-                  value: '1rem',
-                  pixelValue: '16px',
-                  var: '--spacing-kapwa-md',
-                  class: 'kapwa-w-md',
-                },
-                {
-                  name: 'lg',
-                  value: '1.5rem',
-                  pixelValue: '24px',
-                  var: '--spacing-kapwa-lg',
-                  class: 'kapwa-w-lg',
-                },
-                {
-                  name: 'xl',
-                  value: '2rem',
-                  pixelValue: '32px',
-                  var: '--spacing-kapwa-xl',
-                  class: 'kapwa-w-xl',
-                },
-                {
-                  name: '2xl',
-                  value: '2.5rem',
-                  pixelValue: '40px',
-                  var: '--spacing-kapwa-2xl',
-                  class: 'kapwa-w-2xl',
-                },
-                {
-                  name: '3xl',
-                  value: '3rem',
-                  pixelValue: '48px',
-                  var: '--spacing-kapwa-3xl',
-                  class: 'kapwa-w-3xl',
-                },
-              ].map(spacing => (
-                <div key={spacing.name} className='flex items-center gap-4'>
+            <div className='space-y-2'>
+              {[1, 2, 4, 6, 8, 12, 16, 20, 24, 32].map(space => (
+                <div key={space} className='flex items-center gap-4'>
                   <div
-                    className={`kapwa-bg-brand-500 rounded ${spacing.class} h-4`}
-                    style={{ minWidth: '4px' }}
+                    className={`kapwa-bg-brand-500`}
+                    style={{ width: `${space * 0.25}rem`, height: '1rem' }}
                   ></div>
-                  <div className='flex-1'>
-                    <div className='flex items-center gap-2'>
-                      <span className='text-sm font-medium kapwa-text-gray-800'>
-                        spacing-{spacing.name}
-                      </span>
-                      <span className='text-xs kapwa-text-gray-600'>
-                        {spacing.value} ({spacing.pixelValue})
-                      </span>
-                    </div>
-                    <div className='text-xs font-mono kapwa-text-gray-500'>
-                      {spacing.var}
-                    </div>
-                  </div>
+                  <span className='text-sm kapwa-text-gray-700'>
+                    spacing-{space} ({space * 0.25}rem)
+                  </span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Spacing Examples */}
-          <div>
-            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
-              Spacing Examples
-            </h3>
-            <div className='space-y-4'>
-              <div className='border kapwa-border-gray-200 rounded-lg p-4'>
-                <h4 className='text-sm font-medium kapwa-text-gray-800 mb-3'>
-                  Margin Examples
-                </h4>
-                <div className='space-y-4'>
-                  <div className='kapwa-bg-brand-100 kapwa-p-md rounded'>
-                    <div className='kapwa-bg-brand-500 kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-p-md .kapwa-p-sm
-                    </div>
-                  </div>
-                  <div className='kapwa-bg-gray-100 kapwa-px-lg kapwa-py-sm rounded'>
-                    <div className='kapwa-bg-gray-500 kapwa-px-md kapwa-py-xs rounded text-white text-sm'>
-                      .kapwa-px-lg .kapwa-py-sm
-                    </div>
-                  </div>
-                  <div className='kapwa-bg-green-100 kapwa-p-sm rounded'>
-                    <div className='kapwa-bg-green-500 kapwa-m-md kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-m-md .kapwa-p-sm
-                    </div>
-                  </div>
-                  <div className='kapwa-bg-orange-100 kapwa-p-sm rounded'>
-                    <div className='kapwa-bg-orange-500 kapwa-mx-lg kapwa-my-sm kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-mx-lg .kapwa-my-sm .kapwa-p-sm
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -942,22 +834,22 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <div className='space-y-4'>
               {[
                 {
-                  class: 'kapwa-heading-xl',
+                  class: 'heading-xl',
                   text: 'Heading XL',
                   description: '2.5rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-heading-lg',
+                  class: 'heading-lg',
                   text: 'Heading LG',
                   description: '2rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-heading-md',
+                  class: 'heading-md',
                   text: 'Heading MD',
                   description: '1.5rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-heading-sm',
+                  class: 'heading-sm',
                   text: 'Heading SM',
                   description: '1.25rem, 700 weight, 140% line-height',
                 },
@@ -990,52 +882,52 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <div className='space-y-4'>
               {[
                 {
-                  class: 'kapwa-body-xl-default',
+                  class: 'body-xl-default',
                   text: 'Body XL Default',
                   description: '1.25rem, 400 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-xl-strong',
+                  class: 'body-xl-strong',
                   text: 'Body XL Strong',
                   description: '1.25rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-lg-default',
+                  class: 'body-lg-default',
                   text: 'Body LG Default',
                   description: '1.125rem, 400 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-lg-strong',
+                  class: 'body-lg-strong',
                   text: 'Body LG Strong',
                   description: '1.125rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-md-default',
+                  class: 'body-md-default',
                   text: 'Body MD Default',
                   description: '1rem, 400 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-md-strong',
+                  class: 'body-md-strong',
                   text: 'Body MD Strong',
                   description: '1rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-sm-default',
+                  class: 'body-sm-default',
                   text: 'Body SM Default',
                   description: '0.875rem, 400 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-sm-strong',
+                  class: 'body-sm-strong',
                   text: 'Body SM Strong',
                   description: '0.875rem, 700 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-xs-default',
+                  class: 'body-xs-default',
                   text: 'Body XS Default',
                   description: '0.75rem, 400 weight, 140% line-height',
                 },
                 {
-                  class: 'kapwa-body-xs-strong',
+                  class: 'body-xs-strong',
                   text: 'Body XS Strong',
                   description: '0.775rem, 700 weight, 140% line-height',
                 },
@@ -1068,18 +960,18 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <div className='space-y-4'>
               {[
                 {
-                  class: 'kapwa-code-lg',
+                  class: 'code-lg',
                   text: 'Code LG',
                   description:
                     '1.125rem, 400 weight, 140% line-height, mono font',
                 },
                 {
-                  class: 'kapwa-code-md',
+                  class: 'code-md',
                   text: 'Code MD',
                   description: '1rem, 400 weight, 140% line-height, mono font',
                 },
                 {
-                  class: 'kapwa-code-sm',
+                  class: 'code-sm',
                   text: 'Code SM',
                   description:
                     '0.875rem, 400 weight, 140% line-height, mono font',
@@ -1113,22 +1005,22 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <div className='space-y-4'>
               {[
                 {
-                  class: 'kapwa-label-lg',
+                  class: 'label-lg',
                   text: 'Label LG',
                   description: '1.125rem, 700 weight, 120% line-height',
                 },
                 {
-                  class: 'kapwa-label-md',
+                  class: 'label-md',
                   text: 'Label MD',
                   description: '1rem, 700 weight, 120% line-height',
                 },
                 {
-                  class: 'kapwa-label-sm',
+                  class: 'label-sm',
                   text: 'Label SM',
                   description: '0.875rem, 700 weight, 120% line-height',
                 },
                 {
-                  class: 'kapwa-label-xs',
+                  class: 'label-xs',
                   text: 'Label XS',
                   description: '0.75rem, 700 weight, 120% line-height',
                 },
@@ -1161,7 +1053,7 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <div className='space-y-4'>
               {[
                 {
-                  class: 'kapwa-input',
+                  class: 'input',
                   text: 'Input Text',
                   description: '1rem, 400 weight, 1.5rem line-height',
                 },
