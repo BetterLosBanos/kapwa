@@ -30,7 +30,6 @@ async function generateComponentExports() {
   exportsMap['.'] = {
     import: './dist/index.js',
     require: './dist/index.cjs',
-    types: './dist/index.d.ts',
   };
   typesVersionsMap['.'] = ['./dist/index.d.ts'];
   console.log('  ✓ . (main)');
@@ -39,7 +38,6 @@ async function generateComponentExports() {
   exportsMap['./utils'] = {
     import: './dist/utils.js',
     require: './dist/utils.cjs',
-    types: './dist/utils.d.ts',
   };
   typesVersionsMap['utils'] = ['./dist/utils.d.ts'];
   console.log('  ✓ ./utils\n');
@@ -70,7 +68,6 @@ async function generateComponentExports() {
         exportsMap[mainSubpathKey] = {
           import: `./dist/${componentName}/index${mainExt}.js`,
           require: `./dist/${componentName}/index${mainExt}.cjs`,
-          types: `./dist/${componentName}/index.d.ts`,
         };
         typesVersionsMap[componentName] = [
           `./dist/${componentName}/index.d.ts`,
@@ -90,7 +87,6 @@ async function generateComponentExports() {
             exportsMap[subpathKey] = {
               import: `./dist/${componentName}/${subDir}/index${subDirExt}.js`,
               require: `./dist/${componentName}/${subDir}/index${subDirExt}.cjs`,
-              types: `./dist/${componentName}/${subDir}/index.d.ts`,
             };
             typesVersionsMap[typesVersionKey] = [
               `./dist/${componentName}/${subDir}/index.d.ts`,

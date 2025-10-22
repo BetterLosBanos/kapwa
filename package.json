@@ -9,10 +9,10 @@
   "scripts": {
     "dev": "concurrently -p \"[{name}]\" -n \"CLIENT,STORYBOOK\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run start:client\" \"npm run start:storybook\"",
     "start:client": "vite --config vite.config-site.ts",
-    "start:storybook": "storybook dev -p 6006",
+    "start:storybook": "storybook dev --preview-url=http://localhost:5173 --quiet --no-open",
     "build-lib": "vite build --config vite.config-lib.ts && node scripts/generate-component-exports.mjs",
     "build-site": "vite build --config vite.config-site.ts",
-    "build": "npm run build-lib && npm run build-site",
+    "build": "npm run build-lib && npm run build-site && npm run build:storybook",
     "build:storybook": "storybook build -o ./public/storybook",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
@@ -121,42 +121,34 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs"
     },
     "./utils": {
       "import": "./dist/utils.js",
-      "types": "./dist/utils.d.ts",
       "require": "./dist/utils.cjs"
     },
     "./banner": {
       "import": "./dist/banner/index.tsx.js",
-      "types": "./dist/banner/index.d.ts",
       "require": "./dist/banner/index.tsx.cjs"
     },
     "./button": {
       "import": "./dist/button/index.tsx.js",
-      "types": "./dist/button/index.d.ts",
       "require": "./dist/button/index.tsx.cjs"
     },
     "./button/hooks": {
       "import": "./dist/button/hooks/index.ts.js",
-      "types": "./dist/button/hooks/index.d.ts",
       "require": "./dist/button/hooks/index.ts.cjs"
     },
     "./card": {
       "import": "./dist/card/index.tsx.js",
-      "types": "./dist/card/index.d.ts",
       "require": "./dist/card/index.tsx.cjs"
     },
     "./input": {
       "import": "./dist/input/index.tsx.js",
-      "types": "./dist/input/index.d.ts",
       "require": "./dist/input/index.tsx.cjs"
     },
     "./label": {
       "import": "./dist/label/index.tsx.js",
-      "types": "./dist/label/index.d.ts",
       "require": "./dist/label/index.tsx.cjs"
     }
   },
