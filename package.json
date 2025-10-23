@@ -1,10 +1,14 @@
 {
   "name": "@bettergov/kapwa",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.1.1",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "concurrently -p \"[{name}]\" -n \"CLIENT,STORYBOOK\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run start:client\" \"npm run start:storybook\"",
@@ -49,8 +53,6 @@
     "meilisearch": "^0.50.0",
     "next-themes": "^0.4.6",
     "nuqs": "^2.6.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.63.0",
     "react-i18next": "^15.7.3",
@@ -82,6 +84,7 @@
     "@storybook/blocks": "^9.0.0-alpha.17",
     "@storybook/react": "^9.1.8",
     "@storybook/react-vite": "^9.1.7",
+    "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.13",
     "@types/glob": "^8.1.0",
     "@types/leaflet": "^1.9.18",
@@ -100,7 +103,10 @@
     "globals": "^15.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.6",
+    "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "semantic-release": "^24.2.9",
     "tailwindcss": "^4.1.13",
     "ts-node": "^10.9.2",
@@ -112,6 +118,14 @@
     "vite": "^5.4.2",
     "vite-plugin-dts": "^4.5.4"
   },
+  "peerDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "postcss": "^8.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "tw-animate-css": "^1.3.6"
+  },
   "overrides": {
     "react-helmet-async": {
       "react": "^19.0.0",
@@ -120,63 +134,88 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./lib/utils": {
+      "types": "./dist/lib/utils.d.ts",
+      "import": "./dist/lib/utils.js",
+      "require": "./dist/lib/utils.cjs",
+      "default": "./dist/lib/utils.js"
     },
     "./utils": {
-      "import": "./dist/utils.js",
-      "require": "./dist/utils.cjs"
+      "types": "./dist/lib/utils.d.ts",
+      "import": "./dist/lib/utils.js",
+      "require": "./dist/lib/utils.cjs",
+      "default": "./dist/lib/utils.js"
     },
     "./banner": {
-      "import": "./dist/banner/index.tsx.js",
-      "require": "./dist/banner/index.tsx.cjs"
+      "types": "./dist/kapwa/banner/index.d.ts",
+      "import": "./dist/kapwa/banner/index.tsx.js",
+      "require": "./dist/kapwa/banner/index.tsx.cjs",
+      "default": "./dist/kapwa/banner/index.tsx.js"
     },
     "./button": {
-      "import": "./dist/button/index.tsx.js",
-      "require": "./dist/button/index.tsx.cjs"
+      "types": "./dist/kapwa/button/index.d.ts",
+      "import": "./dist/kapwa/button/index.tsx.js",
+      "require": "./dist/kapwa/button/index.tsx.cjs",
+      "default": "./dist/kapwa/button/index.tsx.js"
     },
     "./button/hooks": {
-      "import": "./dist/button/hooks/index.ts.js",
-      "require": "./dist/button/hooks/index.ts.cjs"
+      "types": "./dist/kapwa/button/hooks/index.d.ts",
+      "import": "./dist/kapwa/button/hooks/index.ts.js",
+      "require": "./dist/kapwa/button/hooks/index.ts.cjs",
+      "default": "./dist/kapwa/button/hooks/index.ts.js"
     },
     "./card": {
-      "import": "./dist/card/index.tsx.js",
-      "require": "./dist/card/index.tsx.cjs"
+      "types": "./dist/kapwa/card/index.d.ts",
+      "import": "./dist/kapwa/card/index.tsx.js",
+      "require": "./dist/kapwa/card/index.tsx.cjs",
+      "default": "./dist/kapwa/card/index.tsx.js"
     },
     "./input": {
-      "import": "./dist/input/index.tsx.js",
-      "require": "./dist/input/index.tsx.cjs"
+      "types": "./dist/kapwa/input/index.d.ts",
+      "import": "./dist/kapwa/input/index.tsx.js",
+      "require": "./dist/kapwa/input/index.tsx.cjs",
+      "default": "./dist/kapwa/input/index.tsx.js"
     },
     "./label": {
-      "import": "./dist/label/index.tsx.js",
-      "require": "./dist/label/index.tsx.cjs"
+      "types": "./dist/kapwa/label/index.d.ts",
+      "import": "./dist/kapwa/label/index.tsx.js",
+      "require": "./dist/kapwa/label/index.tsx.cjs",
+      "default": "./dist/kapwa/label/index.tsx.js"
     }
   },
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/index.d.ts"
+        ".dist/index.d.ts"
+      ],
+      "lib/utils": [
+        ".dist/lib/utils.d.ts"
       ],
       "utils": [
-        "./dist/utils.d.ts"
+        ".dist/lib/utils.d.ts"
       ],
       "banner": [
-        "./dist/banner/index.d.ts"
+        ".dist/kapwa/banner/index.d.ts"
       ],
       "button": [
-        "./dist/button/index.d.ts"
+        ".dist/kapwa/button/index.d.ts"
       ],
       "button/hooks": [
-        "./dist/button/hooks/index.d.ts"
+        ".dist/kapwa/button/hooks/index.d.ts"
       ],
       "card": [
-        "./dist/card/index.d.ts"
+        ".dist/kapwa/card/index.d.ts"
       ],
       "input": [
-        "./dist/input/index.d.ts"
+        ".dist/kapwa/input/index.d.ts"
       ],
       "label": [
-        "./dist/label/index.d.ts"
+        ".dist/kapwa/label/index.d.ts"
       ]
     }
   }

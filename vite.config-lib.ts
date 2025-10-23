@@ -1,11 +1,32 @@
-import { defineConfig } from 'vite';
+import { defineConfig, PluginOption } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dts from 'vite-plugin-dts';
 import { glob } from 'glob';
 import { ALLOWED_SUBDIRECTORIES } from './src/constants.js';
+import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const copyKapwaCssPlugin = (): PluginOption => ({
+  name: 'copy-kapwa-css',
+  apply: 'build',
+  closeBundle() {
+    const sourcePath = path.resolve(__dirname, './src/styles/kapwa.css');
+    const destinationDir = path.resolve(__dirname, './dist');
+    const destinationPath = path.resolve(destinationDir, 'kapwa.css');
+
+    if (!fs.existsSync(sourcePath)) {
+      this.warn(`Kapwa CSS source not found at ${sourcePath}`);
+      return;
+    }
+
+    fs.mkdirSync(destinationDir, { recursive: true });
+    fs.copyFileSync(sourcePath, destinationPath);
+
+    console.log('✅ kapwa.css successfully copied');
+  },
+});
 
 // Script for entry points
 const entryPoints = glob
@@ -31,7 +52,7 @@ const entryPoints = glob
       return acc;
     }
 
-    const outPath = filePath.replace(/^src\/kapwa\//, '');
+    const outPath = filePath.replace(/^src\/kapwa\//, 'kapwa/');
     acc[outPath] = filePath;
     return acc;
   }, {});
@@ -39,7 +60,7 @@ const entryPoints = glob
 const finalEntryPoints = {
   ...entryPoints,
   index: path.resolve(__dirname, './src/index.ts'),
-  utils: path.resolve(__dirname, './src/lib/utils.ts'),
+  'lib/utils': path.resolve(__dirname, './src/lib/utils.ts'),
 };
 
 // https://vitejs.dev/config/
@@ -47,8 +68,9 @@ export default defineConfig({
   plugins: [
     dts({
       tsconfigPath: './tsconfig.lib.json',
-      entryRoot: './src/kapwa',
+      entryRoot: './src',
     }),
+    copyKapwaCssPlugin(),
   ],
   build: {
     minify: true,
@@ -61,6 +83,7 @@ export default defineConfig({
     },
     emptyOutDir: true,
     rollupOptions: {
+      treeshake: true,
       // list packages that consumer has to install themselves
       external: [
         'react',
