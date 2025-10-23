@@ -1,10 +1,76 @@
 import React from 'react';
 
-interface KapwaThemeDemoProps {
+interface KapwaTokensProps {
   className?: string;
 }
 
-const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
+const spacingTokens = [
+  {
+    name: '3xs',
+    value: '0.125rem',
+    pixelValue: '2px',
+    var: '--spacing-kapwa-3xs',
+    widthClass: 'w-kapwa-3xs',
+  },
+  {
+    name: '2xs',
+    value: '0.25rem',
+    pixelValue: '4px',
+    var: '--spacing-kapwa-2xs',
+    widthClass: 'w-kapwa-2xs',
+  },
+  {
+    name: 'xs',
+    value: '0.5rem',
+    pixelValue: '8px',
+    var: '--spacing-kapwa-xs',
+    widthClass: 'w-kapwa-xs',
+  },
+  {
+    name: 'sm',
+    value: '0.75rem',
+    pixelValue: '12px',
+    var: '--spacing-kapwa-sm',
+    widthClass: 'w-kapwa-sm',
+  },
+  {
+    name: 'md',
+    value: '1rem',
+    pixelValue: '16px',
+    var: '--spacing-kapwa-md',
+    widthClass: 'w-kapwa-md',
+  },
+  {
+    name: 'lg',
+    value: '1.5rem',
+    pixelValue: '24px',
+    var: '--spacing-kapwa-lg',
+    widthClass: 'w-kapwa-lg',
+  },
+  {
+    name: 'xl',
+    value: '2rem',
+    pixelValue: '32px',
+    var: '--spacing-kapwa-xl',
+    widthClass: 'w-kapwa-xl',
+  },
+  {
+    name: '2xl',
+    value: '2.5rem',
+    pixelValue: '40px',
+    var: '--spacing-kapwa-2xl',
+    widthClass: 'w-kapwa-2xl',
+  },
+  {
+    name: '3xl',
+    value: '3rem',
+    pixelValue: '48px',
+    var: '--spacing-kapwa-3xl',
+    widthClass: 'w-kapwa-3xl',
+  },
+];
+
+const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
   return (
     <div className={`kapwa-theme-demo ${className}`}>
       {/* Color Palette Showcase */}
@@ -769,88 +835,25 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
               Spacing Tokens
             </h3>
-            <div className='space-y-3'>
-              {[
-                {
-                  name: '3xs',
-                  value: '0.125rem',
-                  pixelValue: '2px',
-                  var: '--spacing-kapwa-3xs',
-                  class: 'kapwa-w-3xs',
-                },
-                {
-                  name: '2xs',
-                  value: '0.25rem',
-                  pixelValue: '4px',
-                  var: '--spacing-kapwa-2xs',
-                  class: 'kapwa-w-2xs',
-                },
-                {
-                  name: 'xs',
-                  value: '0.5rem',
-                  pixelValue: '8px',
-                  var: '--spacing-kapwa-xs',
-                  class: 'kapwa-w-xs',
-                },
-                {
-                  name: 'sm',
-                  value: '0.75rem',
-                  pixelValue: '12px',
-                  var: '--spacing-kapwa-sm',
-                  class: 'kapwa-w-sm',
-                },
-                {
-                  name: 'md',
-                  value: '1rem',
-                  pixelValue: '16px',
-                  var: '--spacing-kapwa-md',
-                  class: 'kapwa-w-md',
-                },
-                {
-                  name: 'lg',
-                  value: '1.5rem',
-                  pixelValue: '24px',
-                  var: '--spacing-kapwa-lg',
-                  class: 'kapwa-w-lg',
-                },
-                {
-                  name: 'xl',
-                  value: '2rem',
-                  pixelValue: '32px',
-                  var: '--spacing-kapwa-xl',
-                  class: 'kapwa-w-xl',
-                },
-                {
-                  name: '2xl',
-                  value: '2.5rem',
-                  pixelValue: '40px',
-                  var: '--spacing-kapwa-2xl',
-                  class: 'kapwa-w-2xl',
-                },
-                {
-                  name: '3xl',
-                  value: '3rem',
-                  pixelValue: '48px',
-                  var: '--spacing-kapwa-3xl',
-                  class: 'kapwa-w-3xl',
-                },
-              ].map(spacing => (
+            <div className='space-y-kapwa-sm'>
+              {spacingTokens.map(spacing => (
                 <div key={spacing.name} className='flex items-center gap-4'>
                   <div
-                    className={`kapwa-bg-brand-500 rounded ${spacing.class} h-4`}
+                    className={`kapwa-bg-brand-500 rounded ${spacing.widthClass} h-4`}
                     style={{ minWidth: '4px' }}
                   ></div>
                   <div className='flex-1'>
                     <div className='flex items-center gap-2'>
-                      <span className='text-sm font-medium kapwa-text-gray-800'>
-                        spacing-{spacing.name}
+                      <span className='text-sm'>TW class: </span>
+                      <span className='text-sm font-bold kapwa-text-gray-800'>
+                        kapwa-{spacing.name}
                       </span>
                       <span className='text-xs kapwa-text-gray-600'>
                         {spacing.value} ({spacing.pixelValue})
                       </span>
                     </div>
-                    <div className='text-xs font-mono kapwa-text-gray-500'>
-                      {spacing.var}
+                    <div className='text-sm font-mono kapwa-text-gray-500'>
+                      CSS var: <span className='font-bold'>{spacing.var}</span>
                     </div>
                   </div>
                 </div>
@@ -863,32 +866,49 @@ const KapwaTokens: React.FC<KapwaThemeDemoProps> = ({ className = '' }) => {
             <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
               Spacing Examples
             </h3>
-            <div className='space-y-4'>
+            <div className='grid gap-4 md:grid-cols-2'>
+              <div className='border kapwa-border-gray-200 rounded-lg p-4'>
+                <h4 className='text-sm font-medium kapwa-text-gray-800 mb-3'>
+                  Padding Examples
+                </h4>
+                <div className='space-y-3'>
+                  {spacingTokens.map(spacing => (
+                    <div
+                      key={`padding-${spacing.name}`}
+                      className='kapwa-bg-gray-100 border kapwa-border-gray-200 rounded-lg'
+                    >
+                      <div
+                        className={`kapwa-bg-brand-500 rounded text-white text-xs font-mono space-y-1 kapwa-p-${spacing.name}`}
+                      >
+                        <div>.kapwa-p-{spacing.name}</div>
+                        <div>
+                          {spacing.value} ({spacing.pixelValue})
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div className='border kapwa-border-gray-200 rounded-lg p-4'>
                 <h4 className='text-sm font-medium kapwa-text-gray-800 mb-3'>
                   Margin Examples
                 </h4>
-                <div className='space-y-4'>
-                  <div className='kapwa-bg-brand-100 kapwa-p-md rounded'>
-                    <div className='kapwa-bg-brand-500 kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-p-md .kapwa-p-sm
+                <div className='space-y-3'>
+                  {spacingTokens.map(spacing => (
+                    <div
+                      key={`margin-${spacing.name}`}
+                      className='kapwa-bg-gray-100 border kapwa-border-gray-200 rounded-lg'
+                    >
+                      <div
+                        className={`kapwa-bg-brand-500 rounded text-white text-xs font-mono space-y-1 kapwa-p-3xs kapwa-m-${spacing.name}`}
+                      >
+                        <div>.kapwa-m-{spacing.name}</div>
+                        <div>
+                          {spacing.value} ({spacing.pixelValue})
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className='kapwa-bg-gray-100 kapwa-px-lg kapwa-py-sm rounded'>
-                    <div className='kapwa-bg-gray-500 kapwa-px-md kapwa-py-xs rounded text-white text-sm'>
-                      .kapwa-px-lg .kapwa-py-sm
-                    </div>
-                  </div>
-                  <div className='kapwa-bg-green-100 kapwa-p-sm rounded'>
-                    <div className='kapwa-bg-green-500 kapwa-m-md kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-m-md .kapwa-p-sm
-                    </div>
-                  </div>
-                  <div className='kapwa-bg-orange-100 kapwa-p-sm rounded'>
-                    <div className='kapwa-bg-orange-500 kapwa-mx-lg kapwa-my-sm kapwa-p-sm rounded text-white text-sm'>
-                      .kapwa-mx-lg .kapwa-my-sm .kapwa-p-sm
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
