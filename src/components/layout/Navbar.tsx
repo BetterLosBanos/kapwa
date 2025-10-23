@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 
+const isDev = import.meta.env.DEV;
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -44,7 +46,7 @@ const Navbar: React.FC = () => {
               🚀 Join Us
             </Link>
             <a
-              href='/storybook/index.html'
+              href={`${isDev ? import.meta.env.VITE_STORYBOOK_HOST : '/storybook/index.html'}`}
               className='text-xs text-gray-800 hover:text-primary-600 transition-colors'
               target='_blank'
               rel='noreferrer'

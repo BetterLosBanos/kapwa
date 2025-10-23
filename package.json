@@ -9,11 +9,11 @@
   "scripts": {
     "dev": "concurrently -p \"[{name}]\" -n \"CLIENT,STORYBOOK\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run start:client\" \"npm run start:storybook\"",
     "start:client": "vite --config vite.config-site.ts",
-    "start:storybook": "storybook dev --preview-url=http://localhost:5173 --quiet --no-open",
+    "start:storybook": "storybook dev --docs -p 6006",
     "build-lib": "vite build --config vite.config-lib.ts && node scripts/generate-component-exports.mjs",
     "build-site": "vite build --config vite.config-site.ts",
     "build": "npm run build-lib && npm run build-site && npm run build:storybook",
-    "build:storybook": "storybook build -o ./public/storybook",
+    "build:storybook": "storybook build -o ./site/storybook",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
     "wrangler": "wrangler",
