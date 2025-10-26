@@ -17,7 +17,7 @@ const copyKapwaCssPlugin = (): PluginOption => ({
     const destinationPath = path.resolve(destinationDir, 'kapwa.css');
 
     if (!fs.existsSync(sourcePath)) {
-      this.warn(`Kapwa CSS source not found at ${sourcePath}`);
+      console.warn(`Kapwa CSS source not found at ${sourcePath}`);
       return;
     }
 
