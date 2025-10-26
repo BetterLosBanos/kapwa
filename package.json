@@ -7,7 +7,6 @@
     "dist",
     "README.md"
   ],
-  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -191,31 +190,31 @@
   "typesVersions": {
     "*": {
       ".": [
-        ".dist/index.d.ts"
+        "./dist/index.d.ts"
       ],
       "lib/utils": [
-        ".dist/lib/utils.d.ts"
+        "./dist/lib/utils.d.ts"
       ],
       "utils": [
-        ".dist/lib/utils.d.ts"
+        "./dist/lib/utils.d.ts"
       ],
       "banner": [
-        ".dist/kapwa/banner/index.d.ts"
+        "./dist/kapwa/banner/index.d.ts"
       ],
       "button": [
-        ".dist/kapwa/button/index.d.ts"
+        "./dist/kapwa/button/index.d.ts"
       ],
       "button/hooks": [
-        ".dist/kapwa/button/hooks/index.d.ts"
+        "./dist/kapwa/button/hooks/index.d.ts"
       ],
       "card": [
-        ".dist/kapwa/card/index.d.ts"
+        "./dist/kapwa/card/index.d.ts"
       ],
       "input": [
-        ".dist/kapwa/input/index.d.ts"
+        "./dist/kapwa/input/index.d.ts"
       ],
       "label": [
-        ".dist/kapwa/label/index.d.ts"
+        "./dist/kapwa/label/index.d.ts"
       ]
     }
   }

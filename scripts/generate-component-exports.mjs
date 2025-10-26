@@ -13,6 +13,13 @@ function getEntryPointExtension(dirPath) {
   return null; // No entry point found
 }
 
+const buildExportEntry = ({ types, esmPath, cjsPath }) => ({
+  types,
+  import: esmPath,
+  require: cjsPath,
+  default: esmPath,
+});
+
 async function generateComponentExports() {
   console.log('🔧 Generating component exports and updating package.json...\n');
 
@@ -27,33 +34,30 @@ async function generateComponentExports() {
 
   // Add main entry point
   console.log('📦 Adding main entry points:');
-  exportsMap['.'] = {
+  exportsMap['.'] = buildExportEntry({
     types: './dist/index.d.ts',
-    import: './dist/index.js',
-    require: './dist/index.cjs',
-    default: './dist/index.js',
-  };
-  typesVersionsMap['.'] = ['.dist/index.d.ts'];
+    esmPath: './dist/index.js',
+    cjsPath: './dist/index.cjs',
+  });
+  typesVersionsMap['.'] = ['./dist/index.d.ts'];
   console.log('  ✓ . (main)');
 
   // Add utils entry point
-  exportsMap['./lib/utils'] = {
+  exportsMap['./lib/utils'] = buildExportEntry({
     types: './dist/lib/utils.d.ts',
-    import: './dist/lib/utils.js',
-    require: './dist/lib/utils.cjs',
-    default: './dist/lib/utils.js',
-  };
-  typesVersionsMap['lib/utils'] = ['.dist/lib/utils.d.ts'];
+    esmPath: './dist/lib/utils.js',
+    cjsPath: './dist/lib/utils.cjs',
+  });
+  typesVersionsMap['lib/utils'] = ['./dist/lib/utils.d.ts'];
   console.log('  ✓ ./lib/utils\n');
 
   // Legacy utils alias
-  exportsMap['./utils'] = {
+  exportsMap['./utils'] = buildExportEntry({
     types: './dist/lib/utils.d.ts',
-    import: './dist/lib/utils.js',
-    require: './dist/lib/utils.cjs',
-    default: './dist/lib/utils.js',
-  };
-  typesVersionsMap['utils'] = ['.dist/lib/utils.d.ts'];
+    esmPath: './dist/lib/utils.js',
+    cjsPath: './dist/lib/utils.cjs',
+  });
+  typesVersionsMap['utils'] = ['./dist/lib/utils.d.ts'];
 
   // Scan components
   console.log('🔍 Scanning components in src/kapwa/...');
@@ -78,16 +82,15 @@ async function generateComponentExports() {
 
         // Main component export
         const mainSubpathKey = `./${componentName}`;
-        exportsMap[mainSubpathKey] = {
+        exportsMap[mainSubpathKey] = buildExportEntry({
           types: `./dist/kapwa/${componentName}/index.d.ts`,
-          import: `./dist/kapwa/${componentName}/index${mainExt}.js`,
-          require: `./dist/kapwa/${componentName}/index${mainExt}.cjs`,
-          default: `./dist/kapwa/${componentName}/index${mainExt}.js`,
-        };
-        typesVersionsMap[componentName] = [
-          `.dist/kapwa/${componentName}/index.d.ts`,
-        ];
+          esmPath: `./dist/kapwa/${componentName}/index${mainExt}.js`,
+          cjsPath: `./dist/kapwa/${componentName}/index${mainExt}.cjs`,
+        });
         componentExports.push(`export * from './kapwa/${componentName}';`);
+        typesVersionsMap[componentName] = [
+          `./dist/kapwa/${componentName}/index.d.ts`,
+        ];
 
         // 2. Scan for sub-directory entry points (hooks, types, utils)
         for (const subDir of ALLOWED_SUBDIRECTORIES) {
@@ -97,16 +100,13 @@ async function generateComponentExports() {
           if (subDirExt) {
             console.log(`    └─ ${componentName}/${subDir}`);
             const subpathKey = `./${componentName}/${subDir}`;
-            const typesVersionKey = `${componentName}/${subDir}`;
-
-            exportsMap[subpathKey] = {
+            exportsMap[subpathKey] = buildExportEntry({
               types: `./dist/kapwa/${componentName}/${subDir}/index.d.ts`,
-              import: `./dist/kapwa/${componentName}/${subDir}/index${subDirExt}.js`,
-              require: `./dist/kapwa/${componentName}/${subDir}/index${subDirExt}.cjs`,
-              default: `./dist/kapwa/${componentName}/${subDir}/index${subDirExt}.js`,
-            };
-            typesVersionsMap[typesVersionKey] = [
-              `.dist/kapwa/${componentName}/${subDir}/index.d.ts`,
+              esmPath: `./dist/kapwa/${componentName}/${subDir}/index${subDirExt}.js`,
+              cjsPath: `./dist/kapwa/${componentName}/${subDir}/index${subDirExt}.cjs`,
+            });
+            typesVersionsMap[`${componentName}/${subDir}`] = [
+              `./dist/kapwa/${componentName}/${subDir}/index.d.ts`,
             ];
           }
         }
