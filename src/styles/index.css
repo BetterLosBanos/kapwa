@@ -3,7 +3,6 @@
 @import 'tailwindcss';
 @import './kapwa.css';
 
-
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
 
@@ -1580,4 +1579,3 @@
     @apply bg-background text-foreground;
   }
 }
-

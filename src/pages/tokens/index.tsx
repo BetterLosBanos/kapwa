@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardHeader, CardContent} from '@kapwa/card';
-import KapwaTokens from './KapwaTokens'
+import { Card, CardHeader, CardContent } from '@kapwa/card';
+import KapwaTokens from './KapwaTokens';
 
 const Tokens: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const Tokens: React.FC = () => {
             </p>
           </CardHeader>
           <CardContent>
-            <KapwaTokens/>
+            <KapwaTokens />
           </CardContent>
         </Card>
       </div>

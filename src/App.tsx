@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/components' element={<Components />} />
-            <Route path="/tokens" element={<Tokens/>} />
+            <Route path='/tokens' element={<Tokens />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/accessibility' element={<AccessibilityPage />} />
             <Route path='/ideas' element={<Ideas />} />
