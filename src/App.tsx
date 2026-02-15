@@ -3,10 +3,9 @@ import { NuqsAdapter } from 'nuqs/adapters/react-router/v6';
 import Navbar from '@layout/Navbar';
 import Footer from '@layout/Footer';
 import AboutPage from '@pages/about';
-import DesignGuide from '@pages/DesignGuide';
+import Components from '@pages/components';
 
-// Sitemap Page
-import SitemapPage from '@pages/sitemap';
+import HomePage from '@pages/home';
 import Ideas from '@pages/Ideas';
 import JoinUs from '@pages/JoinUs';
 import TermsOfService from '@pages/TermsOfService';
@@ -14,6 +13,7 @@ import ScrollToTop from '@ui/ScrollToTop';
 import Discord from '@pages/Discord';
 import NotFound from '@pages/NotFound';
 import AccessibilityPage from '@pages/accessibility';
+import Tokens from '@pages/tokens';
 
 function App() {
   return (
@@ -23,13 +23,14 @@ function App() {
           <Navbar />
           <ScrollToTop />
           <Routes>
-            <Route path='/' element={<DesignGuide />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/components' element={<Components />} />
+            <Route path='/tokens' element={<Tokens />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/accessibility' element={<AccessibilityPage />} />
             <Route path='/ideas' element={<Ideas />} />
             <Route path='/join-us' element={<JoinUs />} />{' '}
             <Route path='/terms-of-service' element={<TermsOfService />} />
-            <Route path='/sitemap' element={<SitemapPage />} />
             <Route path='/discord' Component={Discord} />
             {/*Not Found/404 Page */}
             <Route path='*' element={<NotFound />} />
