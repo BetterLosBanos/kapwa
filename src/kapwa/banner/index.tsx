@@ -159,13 +159,13 @@ const Banner: React.FC<BannerProps> = ({
   ) => {
     const variants = {
       primary:
-        'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
+        'bg-kapwa-blue-600 text-kapwa-neutral-50 hover:bg-kapwa-blue-700 focus:ring-kapwa-blue-500',
       secondary:
-        'bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500',
+        'bg-kapwa-orange-600 text-kapwa-neutral-50 hover:bg-kapwa-orange-700 focus:ring-kapwa-orange-500',
       outline:
-        'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-primary-500',
+        'bg-transparent border border-kapwa-gray-300 text-kapwa-gray-700 hover:bg-kapwa-gray-50 focus:ring-kapwa-blue-500',
       ghost:
-        'bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
+        'bg-transparent text-kapwa-gray-700 hover:bg-kapwa-gray-100 focus:ring-kapwa-gray-500',
     };
 
     const sizes = {

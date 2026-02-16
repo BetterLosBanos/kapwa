@@ -1,45 +1,45 @@
-import { j as r } from "../../jsx-runtime-DdAyboqB.js";
-import { c as g } from "../../utils-BWXuiikn.js";
-const h = ({
-  children: n,
-  className: i,
-  variant: s = "primary",
-  size: c = "md",
-  fullWidth: l = !1,
+import { j as a } from "../../jsx-runtime-DdAyboqB.js";
+import { c as x } from "../../utils-BWXuiikn.js";
+const d = ({
+  children: o,
+  className: l,
+  variant: r = "primary",
+  size: p = "md",
+  fullWidth: c = !1,
   isLoading: e = !1,
-  leftIcon: t,
-  rightIcon: a,
-  disabled: m,
-  ...p
+  leftIcon: s,
+  rightIcon: t,
+  disabled: i,
+  ...u
 }) => {
-  const x = {
-    primary: "bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500",
-    secondary: "bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500",
-    outline: "bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-primary-500",
-    ghost: "bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500",
-    link: "bg-transparent text-primary-500 hover:underline p-0 h-auto focus:ring-0"
-  }, y = {
+  const m = {
+    primary: "bg-kapwa-blue-600 text-kapwa-neutral-50 hover:bg-kapwa-blue-700 focus:ring-kapwa-blue-500",
+    secondary: "bg-kapwa-orange-600 text-kapwa-neutral-50 hover:bg-kapwa-orange-700 focus:ring-kapwa-orange-500",
+    outline: "bg-transparent border border-kapwa-gray-300 text-kapwa-gray-700 hover:bg-kapwa-gray-50 focus:ring-kapwa-blue-500",
+    ghost: "bg-transparent text-kapwa-gray-700 hover:bg-kapwa-gray-100 focus:ring-kapwa-gray-500",
+    link: "bg-transparent text-kapwa-blue-600 hover:underline p-0 h-auto focus:ring-0"
+  }, g = {
     sm: "text-sm px-3 py-1.5 h-8",
     md: "text-base px-4 py-2 h-10",
     lg: "text-lg px-6 py-3 h-12"
-  }, o = m || e;
-  return /* @__PURE__ */ r.jsxs(
+  }, n = i || e;
+  return /* @__PURE__ */ a.jsxs(
     "button",
     {
-      className: g(
+      className: x(
         "inline-flex items-center justify-center rounded-md font-medium transition-colors",
         "focus:outline-hidden focus:ring-2 focus:ring-offset-2",
-        x[s],
-        y[c],
-        l ? "w-full" : "",
-        o ? "opacity-60 cursor-not-allowed" : "",
-        s !== "link" && "shadow-xs",
-        i
+        m[r],
+        g[p],
+        c ? "w-full" : "",
+        n ? "opacity-60 cursor-not-allowed" : "",
+        r !== "link" && "shadow-xs",
+        l
       ),
-      disabled: o,
-      ...p,
+      disabled: n,
+      ...u,
       children: [
-        e && /* @__PURE__ */ r.jsxs(
+        e && /* @__PURE__ */ a.jsxs(
           "svg",
           {
             className: "animate-spin -ml-1 mr-2 h-4 w-4 text-current",
@@ -47,7 +47,7 @@ const h = ({
             fill: "none",
             viewBox: "0 0 24 24",
             children: [
-              /* @__PURE__ */ r.jsx(
+              /* @__PURE__ */ a.jsx(
                 "circle",
                 {
                   className: "opacity-25",
@@ -58,7 +58,7 @@ const h = ({
                   strokeWidth: "4"
                 }
               ),
-              /* @__PURE__ */ r.jsx(
+              /* @__PURE__ */ a.jsx(
                 "path",
                 {
                   className: "opacity-75",
@@ -69,14 +69,14 @@ const h = ({
             ]
           }
         ),
-        !e && t && /* @__PURE__ */ r.jsx("span", { className: "mr-2", children: t }),
-        n,
-        !e && a && /* @__PURE__ */ r.jsx("span", { className: "ml-2", children: a })
+        !e && s && /* @__PURE__ */ a.jsx("span", { className: "mr-2", children: s }),
+        o,
+        !e && t && /* @__PURE__ */ a.jsx("span", { className: "ml-2", children: t })
       ]
     }
   );
 };
 export {
-  h as Button
+  d as Button
 };
 //# sourceMappingURL=index.tsx.js.map

@@ -1,7 +1,7 @@
 {
   "name": "@betterlb/kapwa",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "files": [
     "dist",
@@ -183,9 +183,7 @@
       "import": "./dist/kapwa/label/index.tsx.js",
       "require": "./dist/kapwa/label/index.tsx.cjs",
       "default": "./dist/kapwa/label/index.tsx.js"
-    },
-    "./kapwa.css": "./dist/kapwa.css",
-    "./kapwa-fonts.css": "./dist/kapwa-fonts.css"
+    }
   },
   "typesVersions": {
     "*": {
