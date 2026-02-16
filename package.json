@@ -183,6 +183,10 @@
       "import": "./dist/kapwa/label/index.tsx.js",
       "require": "./dist/kapwa/label/index.tsx.cjs",
       "default": "./dist/kapwa/label/index.tsx.js"
+    },
+    "./kapwa.css": {
+      "style": "./dist/kapwa.css",
+      "default": "./dist/kapwa.css"
     }
   },
   "typesVersions": {
