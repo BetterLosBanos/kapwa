@@ -116,7 +116,21 @@ async function generateComponentExports() {
 
   // Update package.json
   console.log('\n📝 Updating package.json...');
-  packageJson.exports = exportsMap;
+
+  // Preserve CSS exports that are manually added
+  const preservedExports = {};
+  if (packageJson.exports) {
+    if (packageJson.exports['./kapwa.css']) {
+      preservedExports['./kapwa.css'] = packageJson.exports['./kapwa.css'];
+      console.log('  ✓ Preserved ./kapwa.css export');
+    }
+    if (packageJson.exports['./kapwa-fonts.css']) {
+      preservedExports['./kapwa-fonts.css'] = packageJson.exports['./kapwa-fonts.css'];
+      console.log('  ✓ Preserved ./kapwa-fonts.css export');
+    }
+  }
+
+  packageJson.exports = { ...exportsMap, ...preservedExports };
   packageJson.typesVersions = { '*': typesVersionsMap };
   await fs.writeFile(
     packageJsonPath,
