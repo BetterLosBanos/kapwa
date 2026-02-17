@@ -271,6 +271,63 @@
   --color-kapwa-border-info: var(--color-kapwa-blue-600);
 }
 
+/* Responsive typography utilities */
+.kapwa-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--font-family-sans);
+}
+
+@media (min-width: 768px) {
+  .kapwa-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kapwa-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .kapwa-heading {
+    font-size: 2.5rem;
+  }
+}
+
+.kapwa-body {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: var(--font-family-sans);
+}
+
+.kapwa-body.strong {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .kapwa-body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kapwa-body {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .kapwa-body {
+    font-size: 1.25rem;
+  }
+}
+
+/* Static size classes */
 .kapwa-heading-xl {
   font-size: 2.5rem;
   font-weight: 700;
