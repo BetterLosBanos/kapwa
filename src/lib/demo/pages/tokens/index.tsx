@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardContent } from '@kapwa/card';
-import KapwaTokens from './KapwaTokens';
+import KapwaTokens from './kapwa-tokens';
 
 const Tokens: React.FC = () => {
   return (

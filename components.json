@@ -1,25 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "new-york",
-  "rsc": false,
+  "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "src/index.css",
-    "baseColor": "slate",
+    "config": "",
+    "css": "src/styles/index.css",
+    "baseColor": "neutral",
     "cssVariables": true,
-    "prefix": "tw-"
+    "prefix": "kapwa"
   },
-  "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "components": "@kapwa",
+    "utils": "@utils"
   },
-  "registries": {
-    "@v0": "https://v0.dev/chat/b/{name}",
-    "@kapwa": "https://github.com/bettergovph/kapwa"
-  }
+  "iconLibrary": "lucide"
 }

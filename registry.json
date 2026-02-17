@@ -1,0 +1,50 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kapwa",
+  "homepage": "http://kapwa-two.vercel.app",
+  "items": [
+    {
+      "name": "demo",
+      "type": "registry:component",
+      "title": "Demo Page",
+      "registryDependencies": ["card"],
+      "description": "A demo page showcasing various components.",
+      "files": [
+        {
+          "path": "src/lib/demo/pages/home/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tokens",
+      "type": "registry:component",
+      "title": "Tokens Page",
+      "registryDependencies": ["card"],
+      "description": "A page showcasing various design tokens.",
+      "files": [
+        {
+          "path": "src/lib/demo/pages/tokens/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/lib/demo/pages/tokens/kapwa-tokens.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "components",
+      "type": "registry:component",
+      "title": "Components Page",
+      "registryDependencies": ["card", "button"],
+      "description": "A page showcasing various components.",
+      "files": [
+        {
+          "path": "src/lib/demo/pages/components/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
