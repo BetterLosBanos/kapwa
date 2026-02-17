@@ -9,3 +9,6 @@ export * from './kapwa/button';
 export * from './kapwa/card';
 export * from './kapwa/input';
 export * from './kapwa/label';
+
+// Tailwind Plugin
+export { kapwaPlugin as plugin } from './kapwa';

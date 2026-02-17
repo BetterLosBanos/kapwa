@@ -61,6 +61,7 @@ const finalEntryPoints = {
   ...entryPoints,
   index: path.resolve(__dirname, './src/index.ts'),
   'lib/utils': path.resolve(__dirname, './src/lib/utils.ts'),
+  kapwa: path.resolve(__dirname, './src/kapwa.ts'),
 };
 
 // https://vitejs.dev/config/
@@ -89,6 +90,7 @@ export default defineConfig({
         'react',
         'react-dom',
         'tailwindcss',
+        'tailwindcss/plugin',
         'tw-animate-css',
         '@tailwindcss/postcss',
         'postcss',
