@@ -125,10 +125,6 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ui': path.resolve(__dirname, './src/components/ui'),
-      '@layout': path.resolve(__dirname, './src/components/layout'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@lib': path.resolve(__dirname, './src/lib'),
       '@kapwa': path.resolve(__dirname, './src/kapwa'),
     },
   },
@@ -163,11 +159,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ui': path.resolve(__dirname, './src/components/ui'),
-      '@layout': path.resolve(__dirname, './src/components/layout'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@kapwa': path.resolve(__dirname, './src/kapwa'),
+      '@ui': path.resolve(__dirname, './src/lib/demo/ui'),
+      '@layout': path.resolve(__dirname, './src/lib/demo/layout'),
+      '@pages': path.resolve(__dirname, './src/lib/demo/pages'),
+      '@kapwa': path.resolve(__dirname, './src/lib/kapwa'),
     },
   },
   plugins: [react(), tailwindcss()],
@@ -196,10 +191,7 @@ export default defineConfig({
     "sourceMap": true,
     "outDir": "dist",
     "declaration": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@lib/utils": ["./src/lib/utils.ts"]
-    }
+    "jsx": "react-jsx"
   },
   "include": ["src/kapwa/**/*.ts", "src/kapwa/**/*.tsx"],
   "exclude": ["src/kapwa/**/*.stories.tsx"] // Exclude Storybook
@@ -223,11 +215,10 @@ export default defineConfig({
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "paths": {
-      "@ui/*": ["./src/components/ui/*"],
-      "@layout/*": ["./src/components/layout/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@kapwa/*": ["./src/kapwa/*"]
+      "@ui/*": ["./src/lib/demo/ui/*"],
+      "@layout/*": ["./src/lib/demo/layout/*"],
+      "@pages/*": ["./src/lib/demo/pages/*"],
+      "@kapwa/*": ["./src/lib/kapwa/*"]
     }
   },
   "include": ["src"]

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card, CardContent, CardImage } from '.';
-import { Button } from '../button';
+import { Button } from '@kapwa/button';
 
 const meta: Meta<typeof Card> = {
   title: 'Components/Card',
