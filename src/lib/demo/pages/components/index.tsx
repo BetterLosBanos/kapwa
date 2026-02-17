@@ -1,23 +1,26 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, CardImage } from '@kapwa/card';
-import { Button } from '@kapwa/button';
+import { ListsSection, ListSectionItem } from '../../blocks/lists';
+import { TablesSection, TableDataItem } from '../../blocks/tables';
 import {
-  Phone,
-  Mail,
-  ExternalLink,
-  Award,
-  Building,
-  Globe,
-} from 'lucide-react';
+  ArticlesSection,
+  ArticleCardItem,
+  ArticleContentSection,
+} from '../../blocks/articles';
+import {
+  BannersSection,
+  StripBannerItem,
+  FullBannerItem,
+} from '../../blocks/banners';
+import { BiographySection, BiographyProfile } from '../../blocks/biography';
 
 const Components: React.FC = () => {
-  const searchResults = [
+  const searchResults: ListSectionItem[] = [
     { id: 1, title: 'National ID Registration', category: 'Citizenship' },
     { id: 2, title: 'Business Permit Application', category: 'Business' },
     { id: 3, title: 'Passport Renewal', category: 'Travel' },
   ];
 
-  const tableData = [
+  const tableData: TableDataItem[] = [
     { id: 1, name: 'John Doe', email: 'john@example.com', status: 'Active' },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com', status: 'Pending' },
     {
@@ -28,455 +31,161 @@ const Components: React.FC = () => {
     },
   ];
 
-  const achievements = [
-    'Led the implementation of digital transformation initiatives across government agencies',
-    'Established international partnerships for economic cooperation',
-    'Launched nationwide infrastructure development programs',
-    'Reformed tax collection systems for improved efficiency',
+  const articleCards: ArticleCardItem[] = [
+    {
+      id: 1,
+      image:
+        'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg',
+      imageAlt: 'Article thumbnail',
+      category: 'News',
+      title: 'Digital Government Initiatives',
+      description:
+        "Latest updates on the government's digital transformation projects and e-services.",
+      hasOverlay: false,
+    },
+    {
+      id: 2,
+      image:
+        'https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg',
+      imageAlt: 'Article with overlay',
+      category: 'Tourism',
+      title: 'Exploring Philippine Islands',
+      description: 'Discover the beauty of the Philippine archipelago.',
+      hasOverlay: true,
+    },
   ];
 
-  const education = [
+  const articleContent: ArticleContentSection[] = [
+    { id: 1, type: 'heading', level: 1, content: 'Article Title' },
     {
-      degree: 'Bachelor of Arts in Political Science',
-      institution: 'University of Oxford',
-      year: '1975',
+      id: 2,
+      type: 'paragraph',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
+    { id: 3, type: 'heading', level: 2, content: 'Section Heading' },
     {
-      degree: 'Master in Business Administration',
-      institution: 'Wharton School of Business',
-      year: '1979',
+      id: 4,
+      type: 'paragraph',
+      content:
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
   ];
+
+  const stripBanner: StripBannerItem = {
+    id: 1,
+    emoji: '🚀',
+    mainText: 'Join the #CivicTech Revolution',
+    subText:
+      'Help build the future of the Philippines and governance through technology',
+    primaryButton: {
+      text: 'Join Now',
+      className:
+        'bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200',
+    },
+    secondaryLink: {
+      text: 'Discord',
+      className: 'text-xs text-orange-200 underline',
+    },
+  };
+
+  const fullBanner: FullBannerItem = {
+    id: 1,
+    title: 'Join the',
+    highlightedWord: '#CivicTech',
+    description:
+      'Help build the future of the Philippines and governance through technology.',
+    highlightedPhrase: 'Volunteer-led. Open source. Community-driven.',
+    primaryButton: {
+      text: 'Join Our Movement',
+      className:
+        'bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100',
+    },
+    secondaryButton: {
+      text: 'Join Discord',
+      className:
+        'border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900',
+    },
+  };
+
+  const biographyProfile: BiographyProfile = {
+    name: 'Ferdinand Marcos Jr.',
+    position: '17th President of the Republic of the Philippines',
+    servingSince: 'Serving since June 30, 2022',
+    profileImage:
+      'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg',
+    bannerImage:
+      'https://images.pexels.com/photos/1714455/pexels-photo-1714455.jpeg',
+    contactInfo: {
+      office: 'Malacañang Palace, Manila',
+      phone: '+63 (2) 8736 8645',
+      email: 'op@president.gov.ph',
+      website: 'www.president.gov.ph',
+    },
+    education: [
+      {
+        degree: 'Bachelor of Arts in Political Science',
+        institution: 'University of Oxford',
+        year: '1975',
+      },
+      {
+        degree: 'Master in Business Administration',
+        institution: 'Wharton School of Business',
+        year: '1979',
+      },
+    ],
+    biography: [
+      'Ferdinand "Bongbong" Romualdez Marcos Jr. serves as the 17th President of the Philippines, assuming office on June 30, 2022. As the country\'s chief executive, he leads the implementation of laws and policies aimed at national development and public welfare.',
+      'Prior to his presidency, he served in various government positions including as a Senator of the Philippines from 2010 to 2016, and as Governor of Ilocos Norte. His administration focuses on economic recovery, infrastructure development, and digital transformation of government services.',
+    ],
+    achievements: [
+      'Led the implementation of digital transformation initiatives across government agencies',
+      'Established international partnerships for economic cooperation',
+      'Launched nationwide infrastructure development programs',
+      'Reformed tax collection systems for improved efficiency',
+    ],
+  };
 
   return (
     <div className='min-h-screen bg-gray-50 py-12'>
       <div className='container mx-auto px-4'>
         <h1 className='text-3xl font-bold text-gray-900 mb-8'>Components</h1>
-
-        {/* Lists Section */}
-        <Card className='mb-8'>
-          <CardHeader>
-            <h2 className='text-2xl font-semibold'>Lists</h2>
-            <p className='text-gray-800'>
-              Different list styles and search results
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className='space-y-8'>
-              {/* Search Results List */}
-              <div>
-                <h3 className='font-medium mb-4'>Search Results</h3>
-                <div className='space-y-4'>
-                  {searchResults.map(result => (
-                    <div
-                      key={result.id}
-                      className='p-4 bg-white border border-gray-200 rounded-lg hover:border-primary-500 transition-colors'
-                    >
-                      <div className='flex items-start justify-between'>
-                        <div>
-                          <h4 className='text-lg font-medium text-gray-900'>
-                            {result.title}
-                          </h4>
-                          <span className='inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800'>
-                            {result.category}
-                          </span>
-                        </div>
-                        <Button variant='ghost' size='sm'>
-                          View
-                          <ExternalLink className='ml-2 h-4 w-4' />
-                        </Button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Tables Section */}
-        <Card className='mb-8'>
-          <CardHeader>
-            <h2 className='text-2xl font-semibold'>Tables</h2>
-            <p className='text-gray-800'>Table styles for data presentation</p>
-          </CardHeader>
-          <CardContent>
-            <div className='overflow-x-auto'>
-              <table className='min-w-full divide-y divide-gray-200'>
-                <thead className='bg-gray-50'>
-                  <tr>
-                    <th className='px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider'>
-                      Name
-                    </th>
-                    <th className='px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider'>
-                      Email
-                    </th>
-                    <th className='px-6 py-3 text-left text-xs font-medium text-gray-800 uppercase tracking-wider'>
-                      Status
-                    </th>
-                    <th className='px-6 py-3 text-right text-xs font-medium text-gray-800 uppercase tracking-wider'>
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className='bg-white divide-y divide-gray-200'>
-                  {tableData.map(row => (
-                    <tr key={row.id} className='hover:bg-gray-50'>
-                      <td className='px-6 py-4 whitespace-nowrap'>
-                        <div className='text-sm font-medium text-gray-900'>
-                          {row.name}
-                        </div>
-                      </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
-                        <div className='text-sm text-gray-800'>{row.email}</div>
-                      </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
-                        <span
-                          className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                            row.status === 'Active'
-                              ? 'bg-green-100 text-green-800'
-                              : row.status === 'Pending'
-                                ? 'bg-yellow-100 text-yellow-800'
-                                : 'bg-red-100 text-red-800'
-                          }`}
-                        >
-                          {row.status}
-                        </span>
-                      </td>
-                      <td className='px-6 py-4 whitespace-nowrap text-right text-sm font-medium'>
-                        <Button variant='ghost' size='sm'>
-                          Edit
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Article Components */}
-        <Card className='mb-8'>
-          <CardHeader>
-            <h2 className='text-2xl font-semibold'>Article Components</h2>
-            <p className='text-gray-800'>Article cards and content styles</p>
-          </CardHeader>
-          <CardContent>
-            <div className='space-y-8'>
-              {/* Article Card */}
-              <div>
-                <h3 className='font-medium mb-4'>Article Card</h3>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                  <Card>
-                    <CardImage
-                      src='https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg'
-                      alt='Article thumbnail'
-                    />
-                    <CardContent>
-                      <span className='inline-block px-2 py-1 text-xs font-medium rounded-sm bg-primary-100 text-primary-800 mb-2'>
-                        News
-                      </span>
-                      <h3 className='text-xl font-semibold mb-2'>
-                        Digital Government Initiatives
-                      </h3>
-                      <p className='text-gray-800 mb-4'>
-                        Latest updates on the government&apos;s digital
-                        transformation projects and e-services.
-                      </p>
-                      <Button variant='link'>Read More</Button>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <div className='relative'>
-                      <CardImage
-                        src='https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg'
-                        alt='Article with overlay'
-                      />
-                      <div className='absolute inset-0 bg-linear-to-t from-black/75 to-transparent flex items-end p-6'>
-                        <div className='text-white'>
-                          <span className='inline-block px-2 py-1 text-xs font-medium rounded-sm bg-white/20 mb-2'>
-                            Tourism
-                          </span>
-                          <h3 className='text-xl font-semibold mb-2'>
-                            Exploring Philippine Islands
-                          </h3>
-                          <p className='text-white/80'>
-                            Discover the beauty of the Philippine archipelago.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Article Content */}
-              <div>
-                <h3 className='font-medium mb-4'>Article Content</h3>
-                <div className='prose max-w-none'>
-                  <h1 className='text-3xl font-bold mb-4'>Article Title</h1>
-                  <p className='text-gray-800 mb-6'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <h2 className='text-2xl font-semibold mb-3'>
-                    Section Heading
-                  </h2>
-                  <p className='text-gray-800 mb-4'>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* CivicTech Components */}
-        <Card className='mb-8'>
-          <CardHeader>
-            <h2 className='text-2xl font-semibold'>CivicTech Components</h2>
-            <p className='text-gray-800'>
-              Banner and call-to-action components for community engagement
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className='space-y-8'>
-              {/* Strip Banner */}
-              <div>
-                <h3 className='font-medium mb-4'>Strip Banner</h3>
-                <div className='relative overflow-hidden bg-linear-to-r from-orange-500 via-red-500 to-pink-500 text-white py-3 rounded-lg'>
-                  <div className='container mx-auto px-4'>
-                    <div className='flex flex-col sm:flex-row items-center justify-between gap-2'>
-                      <div className='flex items-center gap-3'>
-                        <span className='font-bold text-sm'>
-                          🚀 Join the #CivicTech Revolution
-                        </span>
-                        <span className='hidden md:inline text-sm text-orange-100'>
-                          Help build the future of the Philippines and
-                          governance through technology
-                        </span>
-                      </div>
-                      <div className='flex items-center gap-3'>
-                        <button className='bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200'>
-                          Join Now
-                        </button>
-                        <span className='text-xs text-orange-200 underline'>
-                          Discord
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Full Banner */}
-              <div>
-                <h3 className='font-medium mb-4'>Full CivicTech Banner</h3>
-                <div className='relative overflow-hidden bg-linear-to-br from-orange-500 via-red-500 to-pink-600 text-white py-12 rounded-lg'>
-                  <div className='container mx-auto px-4 text-center'>
-                    <h2 className='text-2xl md:text-3xl font-bold mb-4'>
-                      Join the{' '}
-                      <span className='text-yellow-200'>#CivicTech</span>{' '}
-                      Revolution
-                    </h2>
-                    <p className='text-lg mb-6 text-orange-100 max-w-2xl mx-auto'>
-                      Help build the future of the Philippines and governance
-                      through technology.
-                      <strong className='text-yellow-200'>
-                        {' '}
-                        Volunteer-led. Open source. Community-driven.
-                      </strong>
-                    </p>
-                    <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-                      <button className='bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100'>
-                        Join Our Movement
-                      </button>
-                      <button className='border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900'>
-                        Join Discord
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Updated Profile Section */}
-        <Card>
-          <CardHeader>
-            <h2 className='text-2xl font-semibold'>Official Biography</h2>
-            <p className='text-gray-800'>
-              Government official profile and biography layout
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className='max-w-4xl mx-auto'>
-              <div className='bg-white rounded-xl shadow-xs overflow-hidden'>
-                {/* Header Section */}
-                <div className='relative h-64 bg-primary-700'>
-                  <div className='absolute inset-0'>
-                    <img
-                      src='https://images.pexels.com/photos/1714455/pexels-photo-1714455.jpeg'
-                      alt='Office'
-                      className='w-full h-full object-cover opacity-20'
-                    />
-                  </div>
-                  <div className='absolute inset-0 bg-linear-to-b from-primary-900/50 to-primary-900/90' />
-                  <div className='relative h-full container mx-auto px-6 flex items-center'>
-                    <div className='flex items-center space-x-8'>
-                      <img
-                        src='https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg'
-                        alt='Ferdinand Marcos Jr.'
-                        className='w-40 h-40 rounded-full border-4 border-white shadow-xl object-cover'
-                      />
-                      <div className='text-white'>
-                        <div className='text-sm font-medium text-primary-200 mb-1'>
-                          17th President of the Republic of the Philippines
-                        </div>
-                        <h1 className='text-4xl font-bold mb-2'>
-                          Ferdinand Marcos Jr.
-                        </h1>
-                        <p className='text-primary-100'>
-                          Serving since June 30, 2022
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className='container mx-auto px-6 py-8'>
-                  <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
-                    {/* Left Column - Contact & Basic Info */}
-                    <div className='space-y-6'>
-                      <div className='bg-gray-50 rounded-lg p-6'>
-                        <h3 className='text-lg font-semibold mb-4'>
-                          Contact Information
-                        </h3>
-                        <div className='space-y-4'>
-                          <div className='flex items-center text-gray-800'>
-                            <Building className='h-5 w-5 mr-3 text-primary-600' />
-                            <div>
-                              <div className='font-medium'>Office</div>
-                              <div className='text-sm'>
-                                Malacañang Palace, Manila
-                              </div>
-                            </div>
-                          </div>
-                          <div className='flex items-center text-gray-800'>
-                            <Phone className='h-5 w-5 mr-3 text-primary-600' />
-                            <div>
-                              <div className='font-medium'>Phone</div>
-                              <div className='text-sm'>+63 (2) 8736 8645</div>
-                            </div>
-                          </div>
-                          <div className='flex items-center text-gray-800'>
-                            <Mail className='h-5 w-5 mr-3 text-primary-600' />
-                            <div>
-                              <div className='font-medium'>Email</div>
-                              <div className='text-sm'>op@president.gov.ph</div>
-                            </div>
-                          </div>
-                          <div className='flex items-center text-gray-800'>
-                            <Globe className='h-5 w-5 mr-3 text-primary-600' />
-                            <div>
-                              <div className='font-medium'>Website</div>
-                              <div className='text-sm'>
-                                www.president.gov.ph
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className='bg-gray-50 rounded-lg p-6'>
-                        <h3 className='text-lg font-semibold mb-4'>
-                          Education
-                        </h3>
-                        <div className='space-y-4'>
-                          {education.map((edu, index) => (
-                            <div
-                              key={index}
-                              className='border-l-2 border-primary-500 pl-4'
-                            >
-                              <div className='font-medium'>{edu.degree}</div>
-                              <div className='text-sm text-gray-800'>
-                                {edu.institution}
-                              </div>
-                              <div className='text-sm text-gray-800'>
-                                {edu.year}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Bio & Achievements */}
-                    <div className='lg:col-span-2 space-y-6'>
-                      <div>
-                        <h3 className='text-xl font-semibold mb-4'>
-                          Biography
-                        </h3>
-                        <div className='prose max-w-none'>
-                          <p className='text-gray-800 leading-relaxed'>
-                            Ferdinand &ldquo;Bongbong&rdquo; Romualdez Marcos
-                            Jr. serves as the 17th President of the Philippines,
-                            assuming office on June 30, 2022. As the
-                            country&apos;s chief executive, he leads the
-                            implementation of laws and policies aimed at
-                            national development and public welfare.
-                          </p>
-                          <p className='text-gray-800 leading-relaxed mt-4'>
-                            Prior to his presidency, he served in various
-                            government positions including as a Senator of the
-                            Philippines from 2010 to 2016, and as Governor of
-                            Ilocos Norte. His administration focuses on economic
-                            recovery, infrastructure development, and digital
-                            transformation of government services.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3 className='text-xl font-semibold mb-4'>
-                          Key Achievements
-                        </h3>
-                        <div className='grid gap-4'>
-                          {achievements.map((achievement, index) => (
-                            <div key={index} className='flex items-start'>
-                              <Award className='h-5 w-5 text-primary-600 mt-1 mr-3 shrink-0' />
-                              <p className='text-gray-800'>{achievement}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className='flex space-x-4 mt-8'>
-                        <Button className='bg-primary-600 hover:bg-primary-700 text-white'>
-                          <Mail className='h-4 w-4 mr-2' />
-                          Contact Office
-                        </Button>
-                        <Button
-                          variant='outline'
-                          className='border-gray-300 text-gray-700 hover:bg-gray-50'
-                        >
-                          <Globe className='h-4 w-4 mr-2' />
-                          Visit Website
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <ListsSection
+          title='Search Results'
+          headerTitle='Lists'
+          headerSubtitle='Different list styles and search results'
+          listItems={searchResults}
+          externalLinkText='View'
+        />
+        <TablesSection
+          title='Tables'
+          subtitle='Table styles for data presentation'
+          tableData={tableData}
+        />
+        <ArticlesSection
+          headerTitle='Article Components'
+          headerSubtitle='Article cards and content styles'
+          articleCardTitle='Article Card'
+          articleCards={articleCards}
+          showArticleContent={true}
+          articleContentTitle='Article Content'
+          articleContent={articleContent}
+        />
+        <BannersSection
+          headerTitle='CivicTech Components'
+          headerSubtitle='Banner and call-to-action components for community engagement'
+          stripBannerTitle='Strip Banner'
+          stripBanner={stripBanner}
+          fullBannerTitle='Full CivicTech Banner'
+          fullBanner={fullBanner}
+        />
+        <BiographySection
+          headerTitle='Official Biography'
+          headerSubtitle='Government official profile and biography layout'
+          profile={biographyProfile}
+          contactButtonText='Contact Office'
+          websiteButtonText='Visit Website'
+        />
       </div>
     </div>
   );
