@@ -152,13 +152,6 @@ export const kapwaPlugin: PluginCreator = plugin(function ({ addUtilities }) {
       lineHeight: '1.4',
       fontFamily: 'var(--font-mono)',
     },
-
-    // INPUT TEXT
-    '.kapwa-input': {
-      fontSize: '1rem', // 16px
-      fontWeight: '400',
-      lineHeight: '1.5rem', // 24px (different from body!)
-    },
   };
 
   // Register all typography utilities with responsive variants
