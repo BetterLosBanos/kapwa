@@ -117,7 +117,7 @@ async function generateComponentExports() {
   // Update package.json
   console.log('\n📝 Updating package.json...');
 
-  // Preserve CSS and plugin exports that are manually added
+  // Preserve CSS exports that are manually added
   const preservedExports = {};
   if (packageJson.exports) {
     if (packageJson.exports['./kapwa.css']) {
@@ -128,10 +128,6 @@ async function generateComponentExports() {
       preservedExports['./kapwa-fonts.css'] =
         packageJson.exports['./kapwa-fonts.css'];
       console.log('  ✓ Preserved ./kapwa-fonts.css export');
-    }
-    if (packageJson.exports['./plugin']) {
-      preservedExports['./plugin'] = packageJson.exports['./plugin'];
-      console.log('  ✓ Preserved ./plugin export');
     }
   }
 

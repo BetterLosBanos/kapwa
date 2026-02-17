@@ -188,12 +188,6 @@
     "./kapwa.css": {
       "style": "./dist/kapwa.css",
       "default": "./dist/kapwa.css"
-    },
-    "./plugin": {
-      "types": "./dist/kapwa.d.ts",
-      "import": "./dist/kapwa.js",
-      "require": "./dist/kapwa.cjs",
-      "default": "./dist/kapwa.js"
     }
   },
   "typesVersions": {
