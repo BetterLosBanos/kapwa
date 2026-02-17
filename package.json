@@ -1,7 +1,7 @@
 {
   "name": "@bettergov/kapwa",
   "private": false,
-  "version": "1.1.1",
+  "version": "1.1.0",
   "type": "module",
   "files": [
     "dist",
@@ -143,10 +143,10 @@
       "default": "./dist/lib/utils.js"
     },
     "./utils": {
-      "types": "./dist/lib/utils.d.ts",
-      "import": "./dist/lib/utils.js",
-      "require": "./dist/lib/utils.cjs",
-      "default": "./dist/lib/utils.js"
+      "types": "./dist/kapwa/utils/index.d.ts",
+      "import": "./dist/kapwa/utils/index.ts.js",
+      "require": "./dist/kapwa/utils/index.ts.cjs",
+      "default": "./dist/kapwa/utils/index.ts.js"
     },
     "./banner": {
       "types": "./dist/kapwa/banner/index.d.ts",
@@ -194,7 +194,7 @@
         "./dist/lib/utils.d.ts"
       ],
       "utils": [
-        "./dist/lib/utils.d.ts"
+        "./dist/kapwa/utils/index.d.ts"
       ],
       "banner": [
         "./dist/kapwa/banner/index.d.ts"

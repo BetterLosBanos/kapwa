@@ -1,5 +1,4 @@
 import React from 'react';
-import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -9,6 +8,24 @@ import {
   SiX,
   SiDiscord,
 } from '@icons-pack/react-simple-icons';
+
+export const footerNavigation = {
+  mainSections: [
+    {
+      title: 'About',
+      links: [
+        { label: 'Accessibility', href: '/accessibility' },
+        { label: 'Terms of Use', href: '/terms-of-service' },
+        { label: 'Contact Us', href: '/about' },
+      ],
+    },
+  ],
+  socialLinks: [
+    { label: 'Discord', href: '/discord' },
+    // { label: 'Instagram', href: 'https://instagram.com/govph' },
+    // { label: 'YouTube', href: 'https://youtube.com/govph' },
+  ],
+};
 
 const Footer: React.FC = () => {
   const { t } = useTranslation('common');

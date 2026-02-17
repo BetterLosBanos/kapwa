@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import SEO from '../../components/SEO';
+import SEO from '@ui/SEO';
 
 interface HomeSection {
   title: string;

@@ -12,7 +12,7 @@ import {
   AlertCircle,
   Info,
 } from 'lucide-react';
-import SEO from '../../components/SEO';
+import SEO from '@ui/SEO';
 
 const AccessibilityPage: React.FC = () => {
   const accessibilityFeatures = [

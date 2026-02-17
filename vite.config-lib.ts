@@ -30,10 +30,10 @@ const copyKapwaCssPlugin = (): PluginOption => ({
 
 // Script for entry points
 const entryPoints = glob
-  .sync('./src/kapwa/**/index.ts?(x)')
+  .sync('./src/lib/kapwa/**/index.ts?(x)')
   .reduce((acc, filePath) => {
     const pathParts = filePath.split('/');
-    const relevantParts = pathParts.slice(2, -1);
+    const relevantParts = pathParts.slice(3, -1);
 
     let isValidEntry = false;
 
@@ -52,16 +52,10 @@ const entryPoints = glob
       return acc;
     }
 
-    const outPath = filePath.replace(/^src\/kapwa\//, 'kapwa/');
+    const outPath = filePath.replace(/^src\/lib\/kapwa\//, 'kapwa/');
     acc[outPath] = filePath;
     return acc;
   }, {});
-
-const finalEntryPoints = {
-  ...entryPoints,
-  index: path.resolve(__dirname, './src/index.ts'),
-  'lib/utils': path.resolve(__dirname, './src/lib/utils.ts'),
-};
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -69,6 +63,14 @@ export default defineConfig({
     dts({
       tsconfigPath: './tsconfig.lib.json',
       entryRoot: './src',
+      beforeWriteFile: (filePath, content) => {
+        // Remap dist/lib/kapwa/* to dist/kapwa/*
+        const newPath = filePath.replace(/\/lib\/kapwa\//, '/kapwa/');
+        return {
+          filePath: newPath,
+          content,
+        };
+      },
     }),
     copyKapwaCssPlugin(),
   ],
@@ -77,7 +79,7 @@ export default defineConfig({
     sourcemap: true,
     copyPublicDir: false,
     lib: {
-      entry: finalEntryPoints,
+      entry: entryPoints,
       formats: ['es', 'cjs'],
       name: 'Kapwa',
     },
@@ -97,11 +99,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ui': path.resolve(__dirname, './src/components/ui'),
-      '@layout': path.resolve(__dirname, './src/components/layout'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@kapwa': path.resolve(__dirname, './src/kapwa'),
+      '@kapwa': path.resolve(__dirname, './src/lib/kapwa'),
     },
   },
 });
