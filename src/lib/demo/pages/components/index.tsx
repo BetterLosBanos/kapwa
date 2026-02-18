@@ -1,191 +1,254 @@
 import React from 'react';
-import { ListsSection, ListSectionItem } from '../../blocks/lists';
-import { TablesSection, TableDataItem } from '../../blocks/tables';
-import {
-  ArticlesSection,
-  ArticleCardItem,
-  ArticleContentSection,
-} from '../../blocks/articles';
-import {
-  BannersSection,
-  StripBannerItem,
-  FullBannerItem,
-} from '../../blocks/banners';
-import { BiographySection, BiographyProfile } from '../../blocks/biography';
+import { Card, CardHeader, CardContent } from '@kapwa/card';
+import { Button } from '@kapwa/button';
+import { Banner } from '@kapwa/banner';
 
 const Components: React.FC = () => {
-  const searchResults: ListSectionItem[] = [
-    { id: 1, title: 'National ID Registration', category: 'Citizenship' },
-    { id: 2, title: 'Business Permit Application', category: 'Business' },
-    { id: 3, title: 'Passport Renewal', category: 'Travel' },
-  ];
-
-  const tableData: TableDataItem[] = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', status: 'Active' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', status: 'Pending' },
-    {
-      id: 3,
-      name: 'Bob Johnson',
-      email: 'bob@example.com',
-      status: 'Inactive',
-    },
-  ];
-
-  const articleCards: ArticleCardItem[] = [
-    {
-      id: 1,
-      image:
-        'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg',
-      imageAlt: 'Article thumbnail',
-      category: 'News',
-      title: 'Digital Government Initiatives',
-      description:
-        "Latest updates on the government's digital transformation projects and e-services.",
-      hasOverlay: false,
-    },
-    {
-      id: 2,
-      image:
-        'https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg',
-      imageAlt: 'Article with overlay',
-      category: 'Tourism',
-      title: 'Exploring Philippine Islands',
-      description: 'Discover the beauty of the Philippine archipelago.',
-      hasOverlay: true,
-    },
-  ];
-
-  const articleContent: ArticleContentSection[] = [
-    { id: 1, type: 'heading', level: 1, content: 'Article Title' },
-    {
-      id: 2,
-      type: 'paragraph',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    { id: 3, type: 'heading', level: 2, content: 'Section Heading' },
-    {
-      id: 4,
-      type: 'paragraph',
-      content:
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    },
-  ];
-
-  const stripBanner: StripBannerItem = {
-    id: 1,
-    emoji: '🚀',
-    mainText: 'Join the #CivicTech Revolution',
-    subText:
-      'Help build the future of the Philippines and governance through technology',
-    primaryButton: {
-      text: 'Join Now',
-      className:
-        'bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200',
-    },
-    secondaryLink: {
-      text: 'Discord',
-      className: 'text-xs text-orange-200 underline',
-    },
-  };
-
-  const fullBanner: FullBannerItem = {
-    id: 1,
-    title: 'Join the',
-    highlightedWord: '#CivicTech',
-    description:
-      'Help build the future of the Philippines and governance through technology.',
-    highlightedPhrase: 'Volunteer-led. Open source. Community-driven.',
-    primaryButton: {
-      text: 'Join Our Movement',
-      className:
-        'bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100',
-    },
-    secondaryButton: {
-      text: 'Join Discord',
-      className:
-        'border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900',
-    },
-  };
-
-  const biographyProfile: BiographyProfile = {
-    name: 'Ferdinand Marcos Jr.',
-    position: '17th President of the Republic of the Philippines',
-    servingSince: 'Serving since June 30, 2022',
-    profileImage:
-      'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg',
-    bannerImage:
-      'https://images.pexels.com/photos/1714455/pexels-photo-1714455.jpeg',
-    contactInfo: {
-      office: 'Malacañang Palace, Manila',
-      phone: '+63 (2) 8736 8645',
-      email: 'op@president.gov.ph',
-      website: 'www.president.gov.ph',
-    },
-    education: [
-      {
-        degree: 'Bachelor of Arts in Political Science',
-        institution: 'University of Oxford',
-        year: '1975',
-      },
-      {
-        degree: 'Master in Business Administration',
-        institution: 'Wharton School of Business',
-        year: '1979',
-      },
-    ],
-    biography: [
-      'Ferdinand "Bongbong" Romualdez Marcos Jr. serves as the 17th President of the Philippines, assuming office on June 30, 2022. As the country\'s chief executive, he leads the implementation of laws and policies aimed at national development and public welfare.',
-      'Prior to his presidency, he served in various government positions including as a Senator of the Philippines from 2010 to 2016, and as Governor of Ilocos Norte. His administration focuses on economic recovery, infrastructure development, and digital transformation of government services.',
-    ],
-    achievements: [
-      'Led the implementation of digital transformation initiatives across government agencies',
-      'Established international partnerships for economic cooperation',
-      'Launched nationwide infrastructure development programs',
-      'Reformed tax collection systems for improved efficiency',
-    ],
-  };
-
   return (
     <div className='min-h-screen bg-gray-50 py-12'>
       <div className='container mx-auto px-4'>
-        <h1 className='text-3xl font-bold text-gray-900 mb-8'>Components</h1>
-        <ListsSection
-          title='Search Results'
-          headerTitle='Lists'
-          headerSubtitle='Different list styles and search results'
-          listItems={searchResults}
-          externalLinkText='View'
-        />
-        <TablesSection
-          title='Tables'
-          subtitle='Table styles for data presentation'
-          tableData={tableData}
-        />
-        <ArticlesSection
-          headerTitle='Article Components'
-          headerSubtitle='Article cards and content styles'
-          articleCardTitle='Article Card'
-          articleCards={articleCards}
-          showArticleContent={true}
-          articleContentTitle='Article Content'
-          articleContent={articleContent}
-        />
-        <BannersSection
-          headerTitle='CivicTech Components'
-          headerSubtitle='Banner and call-to-action components for community engagement'
-          stripBannerTitle='Strip Banner'
-          stripBanner={stripBanner}
-          fullBannerTitle='Full CivicTech Banner'
-          fullBanner={fullBanner}
-        />
-        <BiographySection
-          headerTitle='Official Biography'
-          headerSubtitle='Government official profile and biography layout'
-          profile={biographyProfile}
-          contactButtonText='Contact Office'
-          websiteButtonText='Visit Website'
-        />
+        <h1 className='text-3xl font-bold text-gray-900 pb-2'>Components</h1>
+        <div className='bg-white rounded-lg shadow-xs my-8 p-8'>
+          <div className='grid-cols-1 mb-8'>
+            <h2 className='text-2xl font-semibold'>Card</h2>
+            <p>Generic card component with header and content sections.</p>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 p-6'>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-96'>
+                <Card className='mb-8'>
+                  <CardHeader>
+                    <h2 className='text-2xl font-semibold'>
+                      Apply for a Trademark Online
+                    </h2>
+                    <div className='mt-2 flex flex-wrap gap-2'>
+                      <button className='cursor-default inline-block px-2 py-1 text-xs font-medium rounded-sm bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors hover:cursor-pointer'>
+                        Business and Trade
+                      </button>
+                      <button className='cursor-default inline-block px-2 py-1 text-xs font-medium rounded-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors hover:cursor-pointer'>
+                        Business Copyright, Trademark and Patent
+                      </button>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className='space-y-3'>
+                      <a
+                        href='https://tm.ipophil.gov.ph/sp-ui-tmefiling/wizard.htm?execution=e1s1'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-gray-800 text-sm hover:text-primary-600 transition-colors break-all line-clamp-1'
+                      >
+                        https://tm.ipophil.gov.ph/sp-ui-tmefiling/wizard.htm?execution=e1s1
+                      </a>
+                      <a
+                        href='https://tm.ipophil.gov.ph/sp-ui-tmefiling/wizard.htm?execution=e1s1'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        <button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-default bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4 hover:cursor-pointer'>
+                          View Service
+                        </button>
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-96'>
+                <Card className='mb-8'>
+                  <CardHeader>
+                    <h2 className='text-2xl font-semibold'>Key Information</h2>
+                  </CardHeader>
+                  <CardContent>
+                    <div className='space-y-3'>
+                      <div>
+                        <div className='text-sm font-medium text-gray-800'>
+                          Official Languages
+                        </div>
+                        <div className='text-gray-900'>Filipino, English</div>
+                      </div>
+                      <div>
+                        <div className='text-sm font-medium text-gray-800'>
+                          Government
+                        </div>
+                        <div className='text-gray-900'>
+                          Presidential Constitutional Republic
+                        </div>
+                      </div>
+                      <div>
+                        <div className='text-sm font-medium text-gray-800'>
+                          Currency
+                        </div>
+                        <div className='text-gray-900'>Philippine Peso (₱)</div>
+                      </div>
+                      <div>
+                        <div className='text-sm font-medium text-gray-800'>
+                          Time Zone
+                        </div>
+                        <div className='text-gray-900'>
+                          UTC+8 (Philippine Standard Time)
+                        </div>
+                      </div>
+                      <div>
+                        <div className='text-sm font-medium text-gray-800'>
+                          Major Cities
+                        </div>
+                        <div className='text-gray-900'>
+                          Manila, Quezon City, Davao, Cebu
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='grid grid-cols-1 mb-8'>
+                <div className='w-96'>
+                  <Card className='mb-8'>
+                    <CardContent>
+                      <div role='region' aria-label='Service details'>
+                        <div className='flex items-start space-x-4'>
+                          <div className='p-3 bg-primary-100 rounded-lg text-primary-600'>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='24'
+                              height='24'
+                              viewBox='0 0 24 24'
+                              fill='none'
+                              stroke='currentColor'
+                              strokeWidth='2'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              className='lucide lucide-mountain h-6 w-6'
+                              aria-hidden='true'
+                            >
+                              <path d='m8 3 4 8 5-5 5 15H2L8 3z'></path>
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className='text-lg font-semibold text-gray-900 mb-2'>
+                              Landscape
+                            </h3>
+                            <p className='text-gray-800'>
+                              Features mountains, volcanoes, tropical
+                              rainforests, and beautiful beaches
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='bg-white rounded-lg shadow-xs my-8 p-8'>
+          <div className='grid grid-cols-1 mb-8'>
+            <h2 className='text-2xl font-semibold'>Button</h2>
+            <p>Generic button component with various styles and sizes.</p>
+          </div>
+          <div className='grid grid-cols-1 p-6'>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-96'>
+                <Button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-default bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4 hover:cursor-pointer'>
+                  View Service
+                </Button>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-96'>
+                <Button
+                  className='flex items-center gap-2 px-4 py-2 rounded-md transition-colors cursor-pointer bg-blue-600 text-white'
+                  leftIcon={
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      className='lucide lucide-list h-4 w-4'
+                      aria-hidden='true'
+                    >
+                      <path d='M3 12h.01'></path>
+                      <path d='M3 18h.01'></path>
+                      <path d='M3 6h.01'></path>
+                      <path d='M8 12h13'></path>
+                      <path d='M8 18h13'></path>
+                      <path d='M8 6h13'></path>
+                    </svg>
+                  }
+                >
+                  Detail View
+                </Button>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-96'>
+                <Button
+                  isLoading={true}
+                  className='flex items-center gap-2 px-4 py-2 rounded-md transition-colors cursor-pointer bg-gray-600 text-white'
+                >
+                  Save
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='bg-white rounded-lg shadow-xs my-8 p-8'>
+          <div className='grid grid-cols-1 mb-8'>
+            <h2 className='text-2xl font-semibold'>Banner</h2>
+            <p className='text-gray-800'>
+              Generic banner component with various styles and sizes.
+            </p>
+          </div>
+          <div className='grid grid-cols-1 rounded-lg shadow-xs p-6'>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-full'>
+                <Banner
+                  title='Government Services'
+                  description='Access official government services quickly and easily. Find what you need for citizenship, business, education, and more.'
+                />
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-full'>
+                <Banner
+                  title='Visa-Free Entry'
+                  icon={true}
+                  type='success'
+                  description='Citizens of United States of America can enter the Philippines without a visa for up to 30 days.'
+                />
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-full'>
+                <Banner
+                  title='Visa Required'
+                  icon={true}
+                  type='error'
+                  description='Citizens of Ukraine need to apply for a visa before traveling to the Philippines.'
+                />
+              </div>
+            </div>
+            <div className='grid grid-cols-1 mb-8'>
+              <div className='w-full'>
+                <Banner
+                  title='Special Conditions Apply'
+                  icon={true}
+                  type='warning'
+                  description='Citizens of India may enter the Philippines without a visa for up to 14 days (extendable to 21 days) under specific conditions.'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

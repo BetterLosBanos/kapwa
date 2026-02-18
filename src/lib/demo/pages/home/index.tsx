@@ -19,6 +19,7 @@ const HomePage: React.FC = () => {
       title: 'Main Pages',
       icon: <Home className='h-5 w-5' />,
       links: [
+        { title: 'Blocks', url: '/blocks', description: 'Blocks' },
         { title: 'Components', url: '/components', description: 'Components' },
         { title: 'Tokens', url: '/tokens', description: 'Tokens' },
       ],
