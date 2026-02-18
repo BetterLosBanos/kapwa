@@ -14,5 +14,8 @@
     "components": "@kapwa",
     "utils": "@utils"
   },
-  "iconLibrary": "lucide"
+  "iconLibrary": "lucide",
+  "registries": {
+    "@kapwa": "http://kapwa-two.vercel.app/r/{name}.json"
+  }
 }
