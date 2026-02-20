@@ -1,0 +1,72 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kapwa",
+  "homepage": "https://kapwa-two.vercel.app",
+  "items": [
+    {
+      "name": "tables",
+      "type": "registry:block",
+      "title": "Tables Section",
+      "registryDependencies": ["card", "button"],
+      "description": "A section showcasing table styles for data presentation.",
+      "files": [
+        {
+          "path": "src/lib/demo/blocks/tables/index.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "articles",
+      "type": "registry:block",
+      "title": "Articles Section",
+      "registryDependencies": ["card", "button"],
+      "description": "A section showcasing article cards and content styles.",
+      "files": [
+        {
+          "path": "src/lib/demo/blocks/articles/index.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "banners",
+      "type": "registry:block",
+      "title": "Banners Section",
+      "registryDependencies": ["card"],
+      "description": "A section showcasing banner and call-to-action components for community engagement.",
+      "files": [
+        {
+          "path": "src/lib/demo/blocks/banners/index.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "biography",
+      "type": "registry:block",
+      "title": "Biography Section",
+      "registryDependencies": ["card", "button"],
+      "description": "A section showcasing government official profile and biography layout.",
+      "files": [
+        {
+          "path": "src/lib/demo/blocks/biography/index.tsx",
+          "type": "registry:block"
+        }
+      ]
+    },
+    {
+      "name": "lists",
+      "type": "registry:block",
+      "title": "Lists Section",
+      "registryDependencies": ["card", "button"],
+      "description": "A section showcasing different list styles and search results.",
+      "files": [
+        {
+          "path": "src/lib/demo/blocks/lists/index.tsx",
+          "type": "registry:block"
+        }
+      ]
+    }
+  ]
+}

@@ -2,18 +2,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NuqsAdapter } from 'nuqs/adapters/react-router/v6';
 import Navbar from '@layout/Navbar';
 import Footer from '@layout/Footer';
-import AboutPage from '@pages/about';
-import Components from '@pages/components';
-
-import HomePage from '@pages/home';
-import Ideas from '@pages/Ideas';
-import JoinUs from '@pages/JoinUs';
-import TermsOfService from '@pages/TermsOfService';
+import AboutPage from './lib/demo/pages/about';
+import ComponentsPage from './lib/demo/pages/components';
+import BlocksPage from './lib/demo/pages/blocks';
+import HomePage from './lib/demo/pages/home';
+import Ideas from './lib/demo/pages/Ideas';
+import JoinUs from './lib/demo/pages/JoinUs';
+import TermsOfService from './lib/demo/pages/TermsOfService';
 import ScrollToTop from '@ui/ScrollToTop';
-import Discord from '@pages/Discord';
-import NotFound from '@pages/NotFound';
-import AccessibilityPage from '@pages/accessibility';
-import Tokens from '@pages/tokens';
+import Discord from './lib/demo/pages/Discord';
+import NotFound from './lib/demo/pages/NotFound';
+import AccessibilityPage from './lib/demo/pages/accessibility';
+import Tokens from './lib/demo/pages/tokens';
 
 function App() {
   return (
@@ -24,7 +24,8 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/components' element={<Components />} />
+            <Route path='/components' element={<ComponentsPage />} />
+            <Route path='/blocks' element={<BlocksPage />} />
             <Route path='/tokens' element={<Tokens />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/accessibility' element={<AccessibilityPage />} />

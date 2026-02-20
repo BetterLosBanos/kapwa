@@ -4,22 +4,18 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "src/index.css",
-    "baseColor": "slate",
+    "config": "",
+    "css": "src/styles/index.css",
+    "baseColor": "neutral",
     "cssVariables": true,
-    "prefix": "tw-"
+    "prefix": "kapwa"
+  },
+  "aliases": {
+    "components": "@kapwa",
+    "utils": "@utils"
   },
   "iconLibrary": "lucide",
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
-  },
   "registries": {
-    "@v0": "https://v0.dev/chat/b/{name}",
-    "@kapwa": "https://github.com/bettergovph/kapwa"
+    "@kapwa": "http://kapwa-two.vercel.app/r/{name}.json"
   }
 }
