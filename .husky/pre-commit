@@ -1,1 +1,2 @@
+npm run registry:build
 npx lint-staged

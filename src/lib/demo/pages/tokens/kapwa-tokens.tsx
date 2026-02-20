@@ -1057,7 +1057,7 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
                 {
                   class: 'kapwa-body-xs-strong',
                   text: 'Body XS Strong',
-                  description: '0.775rem, 700 weight, 140% line-height',
+                  description: '0.75rem, 700 weight, 140% line-height',
                 },
               ].map(typography => (
                 <div
@@ -1082,7 +1082,7 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
 
           {/* Code Text */}
           <div>
-            <h3 className='text-lg font-semibold text-kapwa-gray-800 mb-4'>
+            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
               Code Text
             </h3>
             <div className='space-y-4'>
@@ -1107,15 +1107,15 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
               ].map(typography => (
                 <div
                   key={typography.class}
-                  className='border border-kapwa-gray-200 rounded-lg p-4'
+                  className='border kapwa-border-gray-200 rounded-lg p-4'
                 >
                   <div
-                    className={`${typography.class} text-kapwa-gray-900 mb-2`}
+                    className={`${typography.class} kapwa-text-gray-900 mb-2`}
                   >
                     {typography.text}
                   </div>
-                  <div className='text-sm text-kapwa-gray-600'>
-                    <span className='font-mono bg-kapwa-gray-100 px-2 py-1 rounded text-xs'>
+                  <div className='text-sm kapwa-text-gray-600'>
+                    <span className='font-mono kapwa-bg-gray-100 px-2 py-1 rounded text-xs'>
                       .{typography.class}
                     </span>
                     <span className='ml-2'>{typography.description}</span>
@@ -1127,7 +1127,7 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
 
           {/* Labels */}
           <div>
-            <h3 className='text-lg font-semibold text-kapwa-gray-800 mb-4'>
+            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
               Labels
             </h3>
             <div className='space-y-4'>
@@ -1155,15 +1155,15 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
               ].map(typography => (
                 <div
                   key={typography.class}
-                  className='border border-kapwa-gray-200 rounded-lg p-4'
+                  className='border kapwa-border-gray-200 rounded-lg p-4'
                 >
                   <div
-                    className={`${typography.class} text-kapwa-gray-900 mb-2`}
+                    className={`${typography.class} kapwa-text-gray-900 mb-2`}
                   >
                     {typography.text}
                   </div>
-                  <div className='text-sm text-kapwa-gray-600'>
-                    <span className='font-mono bg-kapwa-gray-100 px-2 py-1 rounded text-xs'>
+                  <div className='text-sm kapwa-text-gray-600'>
+                    <span className='font-mono kapwa-bg-gray-100 px-2 py-1 rounded text-xs'>
                       .{typography.class}
                     </span>
                     <span className='ml-2'>{typography.description}</span>
@@ -1175,7 +1175,7 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
 
           {/* Input & Links */}
           <div>
-            <h3 className='text-lg font-semibold text-kapwa-gray-800 mb-4'>
+            <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-4'>
               Input & Links
             </h3>
             <div className='space-y-4'>
@@ -1205,15 +1205,15 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
               ].map(typography => (
                 <div
                   key={typography.class}
-                  className='border border-kapwa-gray-200 rounded-lg p-4'
+                  className='border kapwa-border-gray-200 rounded-lg p-4'
                 >
                   <div
-                    className={`${typography.class} text-kapwa-gray-900 mb-2`}
+                    className={`${typography.class} kapwa-text-gray-900 mb-2`}
                   >
                     {typography.text}
                   </div>
-                  <div className='text-sm text-kapwa-gray-600'>
-                    <span className='font-mono bg-kapwa-gray-100 px-2 py-1 rounded text-xs'>
+                  <div className='text-sm kapwa-text-gray-600'>
+                    <span className='font-mono kapwa-bg-gray-100 px-2 py-1 rounded text-xs'>
                       .{typography.class}
                     </span>
                     <span className='ml-2'>{typography.description}</span>
@@ -1227,7 +1227,7 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
 
       {/* Shadow Showcase */}
       <section className='mb-12'>
-        <h2 className='text-3xl font-bold text-kapwa-brand-700 mb-6'>
+        <h2 className='text-3xl font-bold kapwa-text-brand-700 mb-6'>
           Kapwa Design System - Shadows
         </h2>
 
@@ -1267,17 +1267,17 @@ const KapwaTokens: React.FC<KapwaTokensProps> = ({ className = '' }) => {
           ].map(shadow => (
             <div key={shadow.name} className='flex flex-col items-center gap-3'>
               <div
-                className='w-20 h-20 bg-white rounded-lg border border-kapwa-gray-200'
+                className='w-20 h-20 bg-white rounded-lg border kapwa-border-gray-200'
                 style={{
                   boxShadow: `var(${shadow.var})`,
                 }}
               ></div>
               <div className='text-center'>
-                <p className='text-sm font-medium text-kapwa-gray-800'>
+                <p className='text-sm font-medium kapwa-text-gray-800'>
                   {shadow.name}
                 </p>
-                <p className='text-xs text-kapwa-gray-600'>{shadow.class}</p>
-                <p className='text-xs text-kapwa-gray-500 mt-1 max-w-32 break-words'>
+                <p className='text-xs kapwa-text-gray-600'>{shadow.class}</p>
+                <p className='text-xs kapwa-text-gray-500 mt-1 max-w-32 break-words'>
                   {shadow.value}
                 </p>
               </div>

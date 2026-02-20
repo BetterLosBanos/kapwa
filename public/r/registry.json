@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "kapwa",
-  "homepage": "http://kapwa-two.vercel.app",
+  "homepage": "https://kapwa-two.vercel.app",
   "items": [
     {
       "name": "tables",
@@ -20,7 +20,7 @@
       "name": "articles",
       "type": "registry:block",
       "title": "Articles Section",
-      "registryDependencies": ["card"],
+      "registryDependencies": ["card", "button"],
       "description": "A section showcasing article cards and content styles.",
       "files": [
         {

@@ -4,7 +4,8 @@
   "title": "Articles Section",
   "description": "A section showcasing article cards and content styles.",
   "registryDependencies": [
-    "card"
+    "card",
+    "button"
   ],
   "files": [
     {

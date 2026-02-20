@@ -22,10 +22,10 @@ const Components: React.FC = () => {
                       Apply for a Trademark Online
                     </h2>
                     <div className='mt-2 flex flex-wrap gap-2'>
-                      <button className='cursor-default inline-block px-2 py-1 text-xs font-medium rounded-sm bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors hover:cursor-pointer'>
+                      <button className='cursor-pointer inline-block px-2 py-1 text-xs font-medium rounded-sm bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors hover:cursor-pointer'>
                         Business and Trade
                       </button>
-                      <button className='cursor-default inline-block px-2 py-1 text-xs font-medium rounded-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors hover:cursor-pointer'>
+                      <button className='cursor-pointer inline-block px-2 py-1 text-xs font-medium rounded-sm bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors hover:cursor-pointer'>
                         Business Copyright, Trademark and Patent
                       </button>
                     </div>
@@ -45,7 +45,7 @@ const Components: React.FC = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                       >
-                        <button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-default bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4 hover:cursor-pointer'>
+                        <button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-pointer bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4'>
                           View Service
                         </button>
                       </a>
@@ -153,7 +153,7 @@ const Components: React.FC = () => {
           <div className='grid grid-cols-1 p-6'>
             <div className='grid grid-cols-1 mb-8'>
               <div className='w-96'>
-                <Button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-default bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4 hover:cursor-pointer'>
+                <Button className='inline-flex items-center justify-center font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2 hover:bg-primary-600 focus:ring-primary-500 h-10 shadow-xs cursor-pointer bg-blue-600 text-white rounded-lg px-4 py-1 text-xs mt-4'>
                   View Service
                 </Button>
               </div>
