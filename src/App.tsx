@@ -3,8 +3,8 @@ import { NuqsAdapter } from 'nuqs/adapters/react-router/v6';
 import Navbar from '@layout/Navbar';
 import Footer from '@layout/Footer';
 import AboutPage from './lib/demo/pages/about';
-import Components from './lib/demo/pages/components';
-
+import ComponentsPage from './lib/demo/pages/components';
+import BlocksPage from './lib/demo/pages/blocks';
 import HomePage from './lib/demo/pages/home';
 import Ideas from './lib/demo/pages/Ideas';
 import JoinUs from './lib/demo/pages/JoinUs';
@@ -24,7 +24,8 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/components' element={<Components />} />
+            <Route path='/components' element={<ComponentsPage />} />
+            <Route path='/blocks' element={<BlocksPage />} />
             <Route path='/tokens' element={<Tokens />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/accessibility' element={<AccessibilityPage />} />

@@ -70,16 +70,16 @@ src/
 ### In Tailwind Classes
 
 ```html
-<div class="bg-kapwa-primary-500 p-4 rounded-lg shadow-md">
-  <h1 class="text-2xl font-bold text-kapwa-primary-700">Kapwa Design System</h1>
+<div class="kapwa-bg-primary-500 p-4 rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold kapwa-text-primary-700">Kapwa Design System</h1>
 </div>
 ```
 
 ### In React Components
 
 ```tsx
-<div className='bg-kapwa-primary-500 p-4 rounded-lg shadow-md'>
-  <h1 className='text-2xl font-bold text-kapwa-primary-700'>
+<div className='kapwa-bg-primary-500 p-4 rounded-lg shadow-md'>
+  <h1 className='text-2xl font-bold kapwa-text-primary-700'>
     Kapwa Design System
   </h1>
 </div>
@@ -107,7 +107,7 @@ To see the Kapwa theme in action:
 The Kapwa theme is designed to work alongside the existing theme. To migrate:
 
 1. **Gradual Migration**: Replace existing color classes with Kapwa equivalents
-2. **Prefix Usage**: Use `kapwa-` prefixed classes (e.g., `bg-kapwa-primary-500`)
+2. **Prefix Usage**: Use `kapwa-` prefixed classes (e.g., `kapwa-bg-primary-500`)
 3. **Token Reference**: Use CSS custom properties for custom implementations
 
 ## Examples
@@ -115,7 +115,7 @@ The Kapwa theme is designed to work alongside the existing theme. To migrate:
 ### Button Component
 
 ```tsx
-<button className='px-6 py-3 bg-kapwa-primary-500 text-white rounded-lg font-medium hover:bg-kapwa-primary-600 transition-colors duration-200'>
+<button className='px-6 py-3 kapwa-bg-primary-500 text-white rounded-lg font-medium hover:kapwa-bg-primary-600 transition-colors duration-200'>
   Primary Button
 </button>
 ```
@@ -123,21 +123,21 @@ The Kapwa theme is designed to work alongside the existing theme. To migrate:
 ### Card Component
 
 ```tsx
-<div className='p-6 bg-white rounded-xl border border-kapwa-gray-200 shadow-base'>
-  <h3 className='text-lg font-semibold text-kapwa-gray-800 mb-2'>Card Title</h3>
-  <p className='text-kapwa-gray-600'>Card content using Kapwa tokens</p>
+<div className='p-6 bg-white rounded-xl border kapwa-border-gray-200 shadow-base'>
+  <h3 className='text-lg font-semibold kapwa-text-gray-800 mb-2'>Card Title</h3>
+  <p className='kapwa-text-gray-600'>Card content using Kapwa tokens</p>
 </div>
 ```
 
 ### Typography Scale
 
 ```tsx
-<h1 className="text-6xl font-black text-kapwa-primary-600">Display Heading</h1>
-<h2 className="text-4xl font-bold text-kapwa-primary-700">Large Heading</h2>
-<h3 className="text-2xl font-semibold text-kapwa-primary-800">Medium Heading</h3>
-<p className="text-lg text-kapwa-gray-700">Body text large</p>
-<p className="text-base text-kapwa-gray-800">Body text regular</p>
-<p className="text-sm text-kapwa-gray-600">Small text</p>
+<h1 className="text-6xl font-black kapwa-text-primary-600">Display Heading</h1>
+<h2 className="text-4xl font-bold kapwa-text-primary-700">Large Heading</h2>
+<h3 className="text-2xl font-semibold kapwa-text-primary-800">Medium Heading</h3>
+<p className="text-lg kapwa-text-gray-700">Body text large</p>
+<p className="text-base kapwa-text-gray-800">Body text regular</p>
+<p className="text-sm kapwa-text-gray-600">Small text</p>
 ```
 
 ## Contributing
