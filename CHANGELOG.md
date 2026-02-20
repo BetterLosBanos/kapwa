@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/bettergovph/kapwa/compare/v1.1.0...v1.2.0) (2026-02-20)
+
+### Bug Fixes
+
+- address copilot feedback ([64a73e9](https://github.com/bettergovph/kapwa/commit/64a73e9de9d64d0c48fb72a997199fef6250cc98))
+- components.json & registry.json ([9ecff74](https://github.com/bettergovph/kapwa/commit/9ecff7486137a2e832c3443f50ea5d5c0cb32539))
+
+### Features
+
+- add components page ([c6c1446](https://github.com/bettergovph/kapwa/commit/c6c1446c160c81bfed0cd6f253f8ac55e77c4a92))
+- generate registry assets ([d392e16](https://github.com/bettergovph/kapwa/commit/d392e169310acde97991af8cc2806b0f8da7b0cb))
+
 # [1.1.0](https://github.com/bettergovph/kapwa/compare/v1.0.0...v1.1.0) (2026-02-15)
 
 ### Bug Fixes
