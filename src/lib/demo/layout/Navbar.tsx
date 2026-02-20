@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
               <div>
                 <div className='text-black font-bold'>Kapwa Design System</div>
                 <div className='text-xs text-gray-800'>
-                  Design System for BetterGov.ph
+                  Design System for Government Portals
                 </div>
               </div>
             </Link>

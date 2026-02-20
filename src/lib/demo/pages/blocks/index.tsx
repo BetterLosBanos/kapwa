@@ -157,11 +157,13 @@ const Blocks: React.FC = () => {
           listItems={searchResults}
           externalLinkText='View'
         />
+
         <TablesSection
           title='Tables'
           subtitle='Table styles for data presentation'
           tableData={tableData}
         />
+
         <ArticlesSection
           headerTitle='Article Components'
           headerSubtitle='Article cards and content styles'
@@ -171,14 +173,16 @@ const Blocks: React.FC = () => {
           articleContentTitle='Article Content'
           articleContent={articleContent}
         />
+
         <BannersSection
-          headerTitle='CivicTech Components'
+          headerTitle='Banner Components'
           headerSubtitle='Banner and call-to-action components for community engagement'
           stripBannerTitle='Strip Banner'
           stripBanner={stripBanner}
           fullBannerTitle='Full CivicTech Banner'
           fullBanner={fullBanner}
         />
+
         <BiographySection
           headerTitle='Official Biography'
           headerSubtitle='Government official profile and biography layout'

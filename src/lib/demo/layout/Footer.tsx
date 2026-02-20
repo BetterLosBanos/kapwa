@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               <div>
                 <div className='font-bold'>Kapwa Design System</div>
                 <div className='text-xs text-gray-400'>
-                  A design system for bettergov.ph
+                  A design system for government portals
                 </div>
               </div>
             </div>
