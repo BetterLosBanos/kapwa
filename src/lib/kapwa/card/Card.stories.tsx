@@ -3,7 +3,7 @@ import { Card, CardContent, CardImage } from '.';
 import { Button } from '@kapwa/button';
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Card',
+  title: 'Components/Cards/Card',
   component: Card,
   tags: ['autodocs'],
   decorators: [

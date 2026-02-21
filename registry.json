@@ -4,6 +4,71 @@
   "homepage": "https://kapwa-two.vercel.app",
   "items": [
     {
+      "name": "article",
+      "type": "registry:component",
+      "title": "Article",
+      "registryDependencies": ["card", "button"],
+      "description": "Article card and content components for displaying news, blog posts, and long-form content.",
+      "files": [
+        {
+          "path": "src/lib/kapwa/article/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "civic-tech-banner",
+      "type": "registry:component",
+      "title": "Civic Tech Banner",
+      "registryDependencies": [],
+      "description": "Full-width banner for civic tech campaigns and community engagement with gradient background and call-to-action buttons.",
+      "files": [
+        {
+          "path": "src/lib/kapwa/civic-tech-banner/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:component",
+      "title": "List",
+      "registryDependencies": ["card", "button"],
+      "description": "List component for displaying categorized items with optional action links. Perfect for service directories, document lists, and search results.",
+      "files": [
+        {
+          "path": "src/lib/kapwa/list/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "strip-banner",
+      "type": "registry:component",
+      "title": "Strip Banner",
+      "registryDependencies": [],
+      "description": "Compact notification banner for urgent announcements, alerts, and time-sensitive information. Features emoji support and dual action buttons.",
+      "files": [
+        {
+          "path": "src/lib/kapwa/strip-banner/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "registryDependencies": ["card", "button"],
+      "description": "Data table component with status badges, hover states, and action buttons. Perfect for user management, application tracking, and directory listings.",
+      "files": [
+        {
+          "path": "src/lib/kapwa/table/index.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "tables",
       "type": "registry:block",
       "title": "Tables Section",

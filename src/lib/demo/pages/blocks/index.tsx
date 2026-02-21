@@ -82,10 +82,12 @@ const Blocks: React.FC = () => {
       text: 'Join Now',
       className:
         'bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200',
+      href: '#',
     },
     secondaryLink: {
       text: 'Discord',
       className: 'text-xs text-orange-200 underline',
+      href: '#',
     },
   };
 
@@ -100,11 +102,13 @@ const Blocks: React.FC = () => {
       text: 'Join Our Movement',
       className:
         'bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100',
+      href: '#',
     },
     secondaryButton: {
       text: 'Join Discord',
       className:
         'border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900',
+      href: '#',
     },
   };
 
@@ -157,11 +161,13 @@ const Blocks: React.FC = () => {
           listItems={searchResults}
           externalLinkText='View'
         />
+
         <TablesSection
           title='Tables'
           subtitle='Table styles for data presentation'
           tableData={tableData}
         />
+
         <ArticlesSection
           headerTitle='Article Components'
           headerSubtitle='Article cards and content styles'
@@ -171,14 +177,16 @@ const Blocks: React.FC = () => {
           articleContentTitle='Article Content'
           articleContent={articleContent}
         />
+
         <BannersSection
-          headerTitle='CivicTech Components'
+          headerTitle='Banner Components'
           headerSubtitle='Banner and call-to-action components for community engagement'
           stripBannerTitle='Strip Banner'
           stripBanner={stripBanner}
           fullBannerTitle='Full CivicTech Banner'
           fullBanner={fullBanner}
         />
+
         <BiographySection
           headerTitle='Official Biography'
           headerSubtitle='Government official profile and biography layout'
