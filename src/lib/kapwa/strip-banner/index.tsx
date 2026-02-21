@@ -6,10 +6,12 @@ type StripBannerItem = {
   primaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
   secondaryLink: {
     text: string;
     className?: string;
+    href: string;
   };
 };
 const StripBanner = ({
@@ -39,6 +41,7 @@ const StripBanner = ({
                   stripBanner.primaryButton.className ||
                   'bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200'
                 }
+                href={stripBanner.primaryButton.href}
               >
                 {stripBanner.primaryButton.text}
               </a>
@@ -47,6 +50,7 @@ const StripBanner = ({
                   stripBanner.secondaryLink.className ||
                   'text-xs text-orange-200 underline'
                 }
+                href={stripBanner.secondaryLink.href}
               >
                 {stripBanner.secondaryLink.text}
               </a>

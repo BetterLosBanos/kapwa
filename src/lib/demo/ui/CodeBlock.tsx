@@ -37,9 +37,10 @@ const CodeBlock = ({ children, className, ...props }: CodeBlockProps) => {
         {children}
       </code>
       <button
+        type='button'
         onClick={handleCopy}
         className={cn(
-          'flex-shrink-0 inline-flex items-center gap-1.5',
+          'shrink-0 inline-flex items-center gap-1.5',
           'px-2.5 py-1.5 rounded-md text-xs',
           'transition-colors duration-200',
           'hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500',

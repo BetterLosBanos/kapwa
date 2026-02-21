@@ -11,10 +11,12 @@ type StripBannerItem = {
   primaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
   secondaryLink: {
     text: string;
     className?: string;
+    href: string;
   };
 };
 
@@ -27,10 +29,12 @@ type FullBannerItem = {
   primaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
   secondaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
 };
 

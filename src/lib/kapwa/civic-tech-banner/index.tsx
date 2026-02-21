@@ -6,10 +6,12 @@ type CivicTechBannerItem = {
   primaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
   secondaryButton: {
     text: string;
     className?: string;
+    href: string;
   };
 };
 
@@ -45,6 +47,7 @@ const CivicTechBanner = ({
                 fullBanner.primaryButton.className ||
                 'bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100'
               }
+              href={fullBanner.primaryButton.href}
             >
               {fullBanner.primaryButton.text}
             </a>
@@ -53,6 +56,7 @@ const CivicTechBanner = ({
                 fullBanner.secondaryButton.className ||
                 'border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900'
               }
+              href={fullBanner.secondaryButton.href}
             >
               {fullBanner.secondaryButton.text}
             </a>
