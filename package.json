@@ -138,17 +138,11 @@
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
-    "./lib/utils": {
-      "types": "./dist/lib/utils.d.ts",
-      "import": "./dist/lib/utils.js",
-      "require": "./dist/lib/utils.cjs",
-      "default": "./dist/lib/utils.js"
-    },
-    "./utils": {
-      "types": "./dist/kapwa/utils/index.d.ts",
-      "import": "./dist/kapwa/utils/index.ts.js",
-      "require": "./dist/kapwa/utils/index.ts.cjs",
-      "default": "./dist/kapwa/utils/index.ts.js"
+    "./article": {
+      "types": "./dist/kapwa/article/index.d.ts",
+      "import": "./dist/kapwa/article/index.tsx.js",
+      "require": "./dist/kapwa/article/index.tsx.cjs",
+      "default": "./dist/kapwa/article/index.tsx.js"
     },
     "./banner": {
       "types": "./dist/kapwa/banner/index.d.ts",
@@ -174,6 +168,12 @@
       "require": "./dist/kapwa/card/index.tsx.cjs",
       "default": "./dist/kapwa/card/index.tsx.js"
     },
+    "./civic-tech-banner": {
+      "types": "./dist/kapwa/civic-tech-banner/index.d.ts",
+      "import": "./dist/kapwa/civic-tech-banner/index.tsx.js",
+      "require": "./dist/kapwa/civic-tech-banner/index.tsx.cjs",
+      "default": "./dist/kapwa/civic-tech-banner/index.tsx.js"
+    },
     "./input": {
       "types": "./dist/kapwa/input/index.d.ts",
       "import": "./dist/kapwa/input/index.tsx.js",
@@ -185,6 +185,30 @@
       "import": "./dist/kapwa/label/index.tsx.js",
       "require": "./dist/kapwa/label/index.tsx.cjs",
       "default": "./dist/kapwa/label/index.tsx.js"
+    },
+    "./list": {
+      "types": "./dist/kapwa/list/index.d.ts",
+      "import": "./dist/kapwa/list/index.tsx.js",
+      "require": "./dist/kapwa/list/index.tsx.cjs",
+      "default": "./dist/kapwa/list/index.tsx.js"
+    },
+    "./strip-banner": {
+      "types": "./dist/kapwa/strip-banner/index.d.ts",
+      "import": "./dist/kapwa/strip-banner/index.tsx.js",
+      "require": "./dist/kapwa/strip-banner/index.tsx.cjs",
+      "default": "./dist/kapwa/strip-banner/index.tsx.js"
+    },
+    "./table": {
+      "types": "./dist/kapwa/table/index.d.ts",
+      "import": "./dist/kapwa/table/index.tsx.js",
+      "require": "./dist/kapwa/table/index.tsx.cjs",
+      "default": "./dist/kapwa/table/index.tsx.js"
+    },
+    "./utils": {
+      "types": "./dist/kapwa/utils/index.d.ts",
+      "import": "./dist/kapwa/utils/index.ts.js",
+      "require": "./dist/kapwa/utils/index.ts.cjs",
+      "default": "./dist/kapwa/utils/index.ts.js"
     }
   },
   "typesVersions": {
@@ -192,11 +216,8 @@
       ".": [
         "./dist/index.d.ts"
       ],
-      "lib/utils": [
-        "./dist/lib/utils.d.ts"
-      ],
-      "utils": [
-        "./dist/kapwa/utils/index.d.ts"
+      "article": [
+        "./dist/kapwa/article/index.d.ts"
       ],
       "banner": [
         "./dist/kapwa/banner/index.d.ts"
@@ -210,11 +231,26 @@
       "card": [
         "./dist/kapwa/card/index.d.ts"
       ],
+      "civic-tech-banner": [
+        "./dist/kapwa/civic-tech-banner/index.d.ts"
+      ],
       "input": [
         "./dist/kapwa/input/index.d.ts"
       ],
       "label": [
         "./dist/kapwa/label/index.d.ts"
+      ],
+      "list": [
+        "./dist/kapwa/list/index.d.ts"
+      ],
+      "strip-banner": [
+        "./dist/kapwa/strip-banner/index.d.ts"
+      ],
+      "table": [
+        "./dist/kapwa/table/index.d.ts"
+      ],
+      "utils": [
+        "./dist/kapwa/utils/index.d.ts"
       ]
     }
   }
