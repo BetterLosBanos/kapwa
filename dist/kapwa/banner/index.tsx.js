@@ -1,5 +1,5 @@
 import { j as e } from "../../jsx-runtime-DdAyboqB.js";
-import { c as n } from "../../utils-BWXuiikn.js";
+import { a as n } from "../../index-CRZxS9UL.js";
 import { Button as v } from "../button/index.tsx.js";
 const y = ({
   title: o,

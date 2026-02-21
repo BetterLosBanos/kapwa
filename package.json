@@ -180,10 +180,6 @@
       "require": "./dist/kapwa/input/index.tsx.cjs",
       "default": "./dist/kapwa/input/index.tsx.js"
     },
-    "./kapwa.css": {
-      "style": "./dist/kapwa.css",
-      "default": "./dist/kapwa.css"
-    },
     "./label": {
       "types": "./dist/kapwa/label/index.d.ts",
       "import": "./dist/kapwa/label/index.tsx.js",
@@ -213,6 +209,10 @@
       "import": "./dist/kapwa/utils/index.ts.js",
       "require": "./dist/kapwa/utils/index.ts.cjs",
       "default": "./dist/kapwa/utils/index.ts.js"
+    },
+    "./kapwa.css": {
+      "style": "./dist/kapwa.css",
+      "default": "./dist/kapwa.css"
     }
   },
   "typesVersions": {
@@ -240,9 +240,6 @@
       ],
       "input": [
         "./dist/kapwa/input/index.d.ts"
-      ],
-      "kapwa.css": [
-        "./dist/kapwa.css"
       ],
       "label": [
         "./dist/kapwa/label/index.d.ts"
