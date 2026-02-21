@@ -22,11 +22,10 @@
 
     /* Aliases */
     "paths": {
-      "@ui/*": ["./src/components/ui/*"],
-      "@layout/*": ["./src/components/layout/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@kapwa/*": ["./src/kapwa/*"]
+      "@ui/*": ["./src/lib/demo/ui/*"],
+      "@layout/*": ["./src/lib/demo/layout/*"],
+      "@pages/*": ["./src/lib/demo/pages/*"],
+      "@kapwa/*": ["./src/lib/kapwa/*"]
     }
   },
   "include": ["src"]

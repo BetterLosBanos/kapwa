@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "lists",
+  "title": "Lists Section",
+  "description": "A section showcasing different list styles and search results.",
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/lib/demo/blocks/lists/index.tsx",
+      "content": "import React from 'react';\nimport { List } from '@kapwa/list';\n\ntype ListSectionItem = {\n  id: number;\n  title: string;\n  category: string;\n};\n\ntype ListsSectionProps = {\n  title: string;\n  headerTitle: string;\n  headerSubtitle?: string;\n  externalLinkText?: string;\n  listItems: ListSectionItem[];\n};\n\nconst ListsSection: React.FC<ListsSectionProps> = ({\n  title,\n  headerTitle,\n  headerSubtitle,\n  externalLinkText,\n  listItems,\n}: ListsSectionProps) => {\n  return (\n    <List\n      title={title}\n      headerTitle={headerTitle}\n      headerSubtitle={headerSubtitle}\n      externalLinkText={externalLinkText}\n      listItems={listItems}\n    />\n  );\n};\n\nexport { ListsSection };\nexport type { ListSectionItem, ListsSectionProps };\n",
+      "type": "registry:block"
+    }
+  ],
+  "type": "registry:block"
+}

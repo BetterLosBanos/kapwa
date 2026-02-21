@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tables",
+  "title": "Tables Section",
+  "description": "A section showcasing table styles for data presentation.",
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/lib/demo/blocks/tables/index.tsx",
+      "content": "import React from 'react';\nimport { Table, TableDataItem } from '@kapwa/table';\n\ntype TablesSectionProps = {\n  title: string;\n  subtitle?: string;\n  tableData: TableDataItem[];\n};\n\nconst TablesSection: React.FC<TablesSectionProps> = ({\n  title,\n  subtitle,\n  tableData,\n}: TablesSectionProps) => {\n  return (\n    <Table title={title} subtitle={subtitle || ''} tableData={tableData} />\n  );\n};\n\nexport { TablesSection };\nexport type { TableDataItem, TablesSectionProps };\n",
+      "type": "registry:block"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -24,20 +24,15 @@
 
     /* Aliases */
     "paths": {
-      "@lib/utils": ["./src/lib/utils.ts"]
+      "@kapwa/*": ["./src/lib/kapwa/*"]
     }
   },
-  "include": [
-    "src/index.ts",
-    "src/lib/utils.ts",
-    "src/kapwa/**/*.ts",
-    "src/kapwa/**/*.tsx"
-  ],
+  "include": ["src/lib/kapwa/**/*.ts", "src/lib/kapwa/**/*.tsx"],
   // Exclude .stories.tsx files
   "exclude": [
     "node_modules",
     "dist",
     "storybook-static",
-    "src/kapwa/**/*.stories.tsx"
+    "src/lib/kapwa/**/*.stories.tsx"
   ]
 }

@@ -16,11 +16,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ui': path.resolve(__dirname, './src/components/ui'),
-      '@layout': path.resolve(__dirname, './src/components/layout'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@kapwa': path.resolve(__dirname, './src/kapwa'),
+      '@ui': path.resolve(__dirname, './src/lib/demo/ui'),
+      '@layout': path.resolve(__dirname, './src/lib/demo/layout'),
+      '@pages': path.resolve(__dirname, './src/lib/demo/pages'),
+      '@kapwa': path.resolve(__dirname, './src/lib/kapwa'),
     },
   },
   optimizeDeps: {

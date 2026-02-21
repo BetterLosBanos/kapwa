@@ -42,26 +42,9 @@ async function generateComponentExports() {
   typesVersionsMap['.'] = ['./dist/index.d.ts'];
   console.log('  ✓ . (main)');
 
-  // Add utils entry point
-  exportsMap['./lib/utils'] = buildExportEntry({
-    types: './dist/lib/utils.d.ts',
-    esmPath: './dist/lib/utils.js',
-    cjsPath: './dist/lib/utils.cjs',
-  });
-  typesVersionsMap['lib/utils'] = ['./dist/lib/utils.d.ts'];
-  console.log('  ✓ ./lib/utils\n');
-
-  // Legacy utils alias
-  exportsMap['./utils'] = buildExportEntry({
-    types: './dist/lib/utils.d.ts',
-    esmPath: './dist/lib/utils.js',
-    cjsPath: './dist/lib/utils.cjs',
-  });
-  typesVersionsMap['utils'] = ['./dist/lib/utils.d.ts'];
-
   // Scan components
-  console.log('🔍 Scanning components in src/kapwa/...');
-  const componentsSrcDir = resolve('src', 'kapwa');
+  console.log('🔍 Scanning components in src/lib/kapwa/...');
+  const componentsSrcDir = resolve('src', 'lib', 'kapwa');
 
   if (existsSync(componentsSrcDir)) {
     const componentFolders = await fs.readdir(componentsSrcDir);
@@ -87,7 +70,7 @@ async function generateComponentExports() {
           esmPath: `./dist/kapwa/${componentName}/index${mainExt}.js`,
           cjsPath: `./dist/kapwa/${componentName}/index${mainExt}.cjs`,
         });
-        componentExports.push(`export * from './kapwa/${componentName}';`);
+        componentExports.push(`export * from './lib/kapwa/${componentName}';`);
         typesVersionsMap[componentName] = [
           `./dist/kapwa/${componentName}/index.d.ts`,
         ];
@@ -151,7 +134,6 @@ async function generateComponentExports() {
 
   let indexFileContent =
     '// This file is auto-generated - do not edit directly\n\n';
-  indexFileContent += "// Utilities\nexport * from './lib/utils';\n\n";
   indexFileContent += '// Components\n';
   indexFileContent += componentExports.join('\n');
   indexFileContent += '\n';

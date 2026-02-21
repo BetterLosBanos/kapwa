@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "banners",
+  "title": "Banners Section",
+  "description": "A section showcasing banner and call-to-action components for community engagement.",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/lib/demo/blocks/banners/index.tsx",
+      "content": "import React from 'react';\nimport { Card, CardHeader, CardContent } from '@kapwa/card';\nimport { StripBanner } from '@kapwa/strip-banner';\nimport { CivicTechBanner } from '@kapwa/civic-tech-banner';\n\ntype StripBannerItem = {\n  id: number;\n  emoji: string;\n  mainText: string;\n  subText: string;\n  primaryButton: {\n    text: string;\n    className?: string;\n    href: string;\n  };\n  secondaryLink: {\n    text: string;\n    className?: string;\n    href: string;\n  };\n};\n\ntype FullBannerItem = {\n  id: number;\n  title: string;\n  highlightedWord: string;\n  description: string;\n  highlightedPhrase: string;\n  primaryButton: {\n    text: string;\n    className?: string;\n    href: string;\n  };\n  secondaryButton: {\n    text: string;\n    className?: string;\n    href: string;\n  };\n};\n\ntype BannersSectionProps = {\n  headerTitle: string;\n  headerSubtitle?: string;\n  stripBannerTitle?: string;\n  stripBanner?: StripBannerItem;\n  fullBannerTitle?: string;\n  fullBanner?: FullBannerItem;\n};\n\nconst BannersSection: React.FC<BannersSectionProps> = ({\n  headerTitle,\n  headerSubtitle,\n  stripBannerTitle = 'Strip Banner',\n  stripBanner,\n  fullBannerTitle = 'Full CivicTech Banner',\n  fullBanner,\n}: BannersSectionProps) => {\n  return (\n    <Card className='mb-8'>\n      <CardHeader>\n        <h2 className='text-2xl font-semibold'>{headerTitle}</h2>\n        {headerSubtitle && <p className='text-gray-800'>{headerSubtitle}</p>}\n      </CardHeader>\n      <CardContent>\n        <div className='space-y-8'>\n          {/* Strip Banner */}\n          {stripBanner && (\n            <StripBanner\n              stripBannerTitle={stripBannerTitle}\n              stripBanner={stripBanner}\n            />\n          )}\n\n          {/* Full Banner */}\n          {fullBanner && (\n            <CivicTechBanner\n              fullBannerTitle={fullBannerTitle}\n              fullBanner={fullBanner}\n            />\n          )}\n        </div>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { BannersSection };\nexport type { StripBannerItem, FullBannerItem, BannersSectionProps };\n",
+      "type": "registry:block"
+    }
+  ],
+  "type": "registry:block"
+}
