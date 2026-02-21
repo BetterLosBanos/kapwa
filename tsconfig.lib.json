@@ -27,11 +27,7 @@
       "@kapwa/*": ["./src/lib/kapwa/*"]
     }
   },
-  "include": [
-    "src/lib/utils/**/*.ts",
-    "src/lib/kapwa/**/*.ts",
-    "src/lib/kapwa/**/*.tsx"
-  ],
+  "include": ["src/lib/kapwa/**/*.ts", "src/lib/kapwa/**/*.tsx"],
   // Exclude .stories.tsx files
   "exclude": [
     "node_modules",

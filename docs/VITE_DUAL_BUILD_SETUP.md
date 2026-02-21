@@ -294,9 +294,6 @@ src/kapwa/
 ```typescript
 // This file is auto-generated - do not edit directly
 
-// Utilities
-export * from './lib/utils';
-
 // Components
 export * from './kapwa/banner';
 export * from './kapwa/button';
@@ -308,38 +305,33 @@ export * from './kapwa/button';
 {
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./utils": {
-      "import": "./dist/utils.js",
-      "require": "./dist/utils.cjs",
-      "types": "./dist/utils.d.ts"
+      "import": "./dist/kapwa/index.js",
+      "require": "./dist/kapwa/index.cjs",
+      "types": "./dist/kapwa/index.d.ts"
     },
     "./banner": {
-      "import": "./dist/banner/index.tsx.js",
-      "require": "./dist/banner/index.tsx.cjs",
-      "types": "./dist/banner/index.d.ts"
+      "import": "./dist/kapwa/banner/index.tsx.js",
+      "require": "./dist/kapwa/banner/index.tsx.cjs",
+      "types": "./dist/kapwa/banner/index.d.ts"
     },
     "./banner/types": {
-      "import": "./dist/banner/types/index.ts.js",
-      "require": "./dist/banner/types/index.ts.cjs",
-      "types": "./dist/banner/types/index.d.ts"
+      "import": "./dist/kapwa/banner/types/index.ts.js",
+      "require": "./dist/kapwa/banner/types/index.ts.cjs",
+      "types": "./dist/kapwa/banner/types/index.d.ts"
     },
     "./banner/hooks": {
-      "import": "./dist/banner/hooks/index.ts.js",
-      "require": "./dist/banner/hooks/index.ts.cjs",
-      "types": "./dist/banner/hooks/index.d.ts"
+      "import": "./dist/kapwa/banner/hooks/index.ts.js",
+      "require": "./dist/kapwa/banner/hooks/index.ts.cjs",
+      "types": "./dist/kapwa/banner/hooks/index.d.ts"
     }
   },
   "typesVersions": {
     "*": {
-      ".": ["./dist/index.d.ts"],
-      "utils": ["./dist/utils.d.ts"],
-      "banner": ["./dist/banner/index.d.ts"],
-      "banner/types": ["./dist/banner/types/index.d.ts"],
-      "banner/hooks": ["./dist/banner/hooks/index.d.ts"]
+      ".": ["./dist/kapwa/index.d.ts"],
+      "utils": ["./dist/kapwa/utils.d.ts"],
+      "banner": ["./dist/kapwa/banner/index.d.ts"],
+      "banner/types": ["./dist/kapwa/banner/types/index.d.ts"],
+      "banner/hooks": ["./dist/kapwa/banner/hooks/index.d.ts"]
     }
   }
 }
@@ -433,37 +425,32 @@ The `exports` and `typesVersions` fields are **automatically generated** by the 
 ```json
 {
   "name": "@bettergov/kapwa",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/kapwa/index.cjs",
+  "module": "./dist/kapwa/index.js",
+  "types": "./dist/kapwa/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./utils": {
-      "import": "./dist/utils.js",
-      "require": "./dist/utils.cjs",
-      "types": "./dist/utils.d.ts"
+      "import": "./dist/kapwa/index.js",
+      "require": "./dist/kapwa/index.cjs",
+      "types": "./dist/kapwa/index.d.ts"
     },
     "./banner": {
-      "import": "./dist/banner/index.tsx.js",
-      "require": "./dist/banner/index.tsx.cjs",
-      "types": "./dist/banner/index.d.ts"
+      "import": "./dist/kapwa/banner/index.tsx.js",
+      "require": "./dist/kapwa/banner/index.tsx.cjs",
+      "types": "./dist/kapwa/banner/index.d.ts"
     },
     "./banner/types": {
-      "import": "./dist/banner/types/index.ts.js",
-      "require": "./dist/banner/types/index.ts.cjs",
-      "types": "./dist/banner/types/index.d.ts"
+      "import": "./dist/kapwa/banner/types/index.ts.js",
+      "require": "./dist/kapwa/banner/types/index.ts.cjs",
+      "types": "./dist/kapwa/banner/types/index.d.ts"
     }
   },
   "typesVersions": {
     "*": {
-      ".": ["./dist/index.d.ts"],
-      "utils": ["./dist/utils.d.ts"],
-      "banner": ["./dist/banner/index.d.ts"],
-      "banner/types": ["./dist/banner/types/index.d.ts"]
+      ".": ["./dist/kapwa/index.d.ts"],
+      "utils": ["./dist/kapwa/utils.d.ts"],
+      "banner": ["./dist/kapwa/banner/index.d.ts"],
+      "banner/types": ["./dist/kapwa/banner/types/index.d.ts"]
     }
   }
 }
