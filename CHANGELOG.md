@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/bettergovph/kapwa/compare/v1.2.1...v1.2.2) (2026-02-21)
+
+### Bug Fixes
+
+- add new components to build ([30cb20a](https://github.com/bettergovph/kapwa/commit/30cb20afc187527c38f92ba99349f3ce55a6c23e))
+- implement copilot suggestions ([cc413e4](https://github.com/bettergovph/kapwa/commit/cc413e4b2e8208d720d89fb93a9f86a75418e534))
+
 ## [1.2.1](https://github.com/bettergovph/kapwa/compare/v1.2.0...v1.2.1) (2026-02-21)
 
 ### Bug Fixes
