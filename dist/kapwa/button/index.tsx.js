@@ -1,5 +1,5 @@
 import { j as a } from "../../jsx-runtime-DdAyboqB.js";
-import { a as x } from "../../index-CRZxS9UL.js";
+import { c as x } from "../../index-BWXuiikn.js";
 const d = ({
   children: o,
   className: l,

@@ -29,33 +29,39 @@ const copyKapwaCssPlugin = (): PluginOption => ({
 });
 
 // Script for entry points
-const entryPoints = glob
+const entryPoints: Record<string, string> = glob
   .sync('./src/lib/kapwa/**/index.ts?(x)')
-  .reduce((acc, filePath) => {
-    const pathParts = filePath.split('/');
-    const relevantParts = pathParts.slice(3, -1);
+  .reduce(
+    (acc, filePath) => {
+      const pathParts = filePath.split('/');
+      const relevantParts = pathParts.slice(3, -1);
 
-    let isValidEntry = false;
+      let isValidEntry = false;
 
-    if (relevantParts.length === 1) {
-      isValidEntry = true;
-    }
+      if (relevantParts.length === 1) {
+        isValidEntry = true;
+      }
 
-    if (
-      relevantParts.length === 2 &&
-      ALLOWED_SUBDIRECTORIES.includes(relevantParts[1])
-    ) {
-      isValidEntry = true;
-    }
+      if (
+        relevantParts.length === 2 &&
+        ALLOWED_SUBDIRECTORIES.includes(relevantParts[1])
+      ) {
+        isValidEntry = true;
+      }
 
-    if (!isValidEntry) {
+      if (!isValidEntry) {
+        return acc;
+      }
+
+      const outPath = filePath.replace(/^src\/lib\/kapwa\//, 'kapwa/');
+      acc[outPath] = filePath;
       return acc;
-    }
+    },
+    {} as Record<string, string>
+  );
 
-    const outPath = filePath.replace(/^src\/lib\/kapwa\//, 'kapwa/');
-    acc[outPath] = filePath;
-    return acc;
-  }, {});
+// Add main index.ts as the primary entry point that re-exports all components
+entryPoints['index'] = './src/index.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig({

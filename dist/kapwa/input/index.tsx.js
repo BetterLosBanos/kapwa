@@ -1,6 +1,6 @@
 import { j as i } from "../../jsx-runtime-DdAyboqB.js";
 import * as s from "react";
-import { a as n } from "../../index-CRZxS9UL.js";
+import { c as n } from "../../index-BWXuiikn.js";
 const a = s.forwardRef(
   ({ className: e, type: r, ...t }, o) => /* @__PURE__ */ i.jsx(
     "input",
