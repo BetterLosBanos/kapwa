@@ -108,7 +108,8 @@ async function generateComponentExports() {
       console.log('  ✓ Preserved ./kapwa.css export');
     }
     if (packageJson.exports['./kapwa-fonts.css']) {
-      preservedExports['./kapwa-fonts.css'] = packageJson.exports['./kapwa-fonts.css'];
+      preservedExports['./kapwa-fonts.css'] =
+        packageJson.exports['./kapwa-fonts.css'];
       console.log('  ✓ Preserved ./kapwa-fonts.css export');
     }
   }

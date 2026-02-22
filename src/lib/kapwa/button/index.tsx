@@ -30,7 +30,8 @@ const Button = ({
       'bg-kapwa-orange-600 text-kapwa-neutral-50 hover:bg-kapwa-orange-700 focus:ring-kapwa-orange-500',
     outline:
       'bg-transparent border border-kapwa-gray-300 text-kapwa-gray-700 hover:bg-kapwa-gray-50 focus:ring-kapwa-blue-500',
-    ghost: 'bg-transparent text-kapwa-gray-700 hover:bg-kapwa-gray-100 focus:ring-kapwa-gray-500',
+    ghost:
+      'bg-transparent text-kapwa-gray-700 hover:bg-kapwa-gray-100 focus:ring-kapwa-gray-500',
     link: 'bg-transparent text-kapwa-blue-600 hover:underline p-0 h-auto focus:ring-0',
   };
 
